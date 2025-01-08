@@ -9,6 +9,7 @@ pytest = "*"
 pylint = "*"
 pytest-approvaltests = "*"
 coverage = "*"
+virtualenv = "*"
 
 [dev-packages]
 
