@@ -36,6 +36,9 @@ class Offer:
     def five_for_amount(self):
         return self.offer_type is SpecialOfferType.FIVE_FOR_AMOUNT
 
+    def two_for_amount(self):
+        return self.offer_type is SpecialOfferType.TWO_FOR_AMOUNT
+
 
 class Discount:
     def __init__(self, product, description, discount_amount):
