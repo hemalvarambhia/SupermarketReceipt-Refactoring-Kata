@@ -36,7 +36,7 @@ class ShoppingCart:
                 quantity_as_int = int(quantity)
                 discount = None
                 x = 1
-                if offer.offer_type == SpecialOfferType.THREE_FOR_TWO:
+                if offer.offer_type is SpecialOfferType.THREE_FOR_TWO:
                     x = 3
 
                 elif offer.offer_type == SpecialOfferType.TWO_FOR_AMOUNT:
