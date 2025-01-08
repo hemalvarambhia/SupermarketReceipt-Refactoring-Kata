@@ -54,8 +54,7 @@ class ShoppingCart:
 
                 if offer.is_ten_percent_discount():
                     percent = offer.argument
-                    discount = Discount(p, str(percent) + "% off",
-                                        -quantity * unit_price * percent / 100.0)
+                    discount = self.ten_percent_off(percent, p, quantity, unit_price)
 
                 if offer.is_five_for_amount() and int(quantity) >= 5:
                     discount_total = unit_price * quantity - (
@@ -64,3 +63,7 @@ class ShoppingCart:
 
                 if discount:
                     receipt.add_discount(discount)
+
+    def ten_percent_off(self, percent, p, quantity, unit_price):
+        return Discount(p, str(percent) + "% off",
+                        -quantity * unit_price * percent / 100.0)
