@@ -33,7 +33,6 @@ class ShoppingCart:
             if p in offers.keys():
                 offer = offers[p]
                 unit_price = catalog.unit_price(p)
-                quantity_as_int = int(quantity)
                 discount = None
                 x = 1
                 if offer.is_three_for_two():
