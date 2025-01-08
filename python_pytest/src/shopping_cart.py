@@ -36,7 +36,7 @@ class ShoppingCart:
                 quantity_as_int = int(quantity)
                 discount = None
                 x = 1
-                if offer.three_for_two():
+                if offer.is_three_for_two():
                     x = 3
 
                 elif offer.is_two_for_amount():
@@ -50,7 +50,7 @@ class ShoppingCart:
                     x = 5
 
                 number_of_x = math.floor(quantity_as_int / x)
-                if offer.three_for_two() and quantity_as_int > 2:
+                if offer.is_three_for_two() and quantity_as_int > 2:
                     discount_amount = quantity * unit_price - (
                                 (number_of_x * 2 * unit_price) + quantity_as_int % 3 * unit_price)
                     discount = Discount(p, "3 for 2", -discount_amount)

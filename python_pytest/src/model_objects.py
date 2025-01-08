@@ -30,7 +30,7 @@ class Offer:
         self.product = product
         self.argument = argument
 
-    def three_for_two(self):
+    def is_three_for_two(self):
         return self.offer_type == SpecialOfferType.THREE_FOR_TWO
 
     def is_five_for_amount(self):
