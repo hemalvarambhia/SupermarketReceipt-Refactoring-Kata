@@ -28,8 +28,7 @@ class ShoppingCart:
             self._product_quantities[product] = quantity
 
     def handle_offers(self, receipt, offers, catalog):
-        for p in self._product_quantities:
-            quantity = self._product_quantities[p]
+        for p, quantity in self._product_quantities.items():
             if p in offers.keys():
                 offer = offers[p]
                 unit_price = catalog.unit_price(p)
