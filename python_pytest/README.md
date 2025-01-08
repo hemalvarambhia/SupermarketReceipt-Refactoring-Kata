@@ -13,3 +13,8 @@ The starting position for this exercise contains the code for setting up the Tel
 - make a venv
 - install requirements, e.g. `python -m pip install -r requirements.txt` or even `pipenv install pytest approvaltests pytest-approvaltests coverage`
 - use pytest to run the tests: `PYTHONPATH=src:tests pipenv run pytest`
+
+## Code Quality Experiments
+
+1. To run pylint, execute `pipenv run pylint path/to/file`
+2. To run ruff, execute `pipenv run ruff path/to/file --config supermarketreceipt-refactoring.toml`
