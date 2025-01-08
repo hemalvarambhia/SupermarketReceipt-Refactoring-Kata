@@ -39,7 +39,7 @@ class ShoppingCart:
                 if offer.three_for_two():
                     x = 3
 
-                elif offer.two_for_amount():
+                elif offer.is_two_for_amount():
                     x = 2
                     if quantity_as_int >= 2:
                         total = offer.argument * (int(quantity) / x) + int(quantity) % 2 * unit_price

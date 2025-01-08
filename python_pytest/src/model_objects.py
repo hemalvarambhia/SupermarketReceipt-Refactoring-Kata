@@ -36,7 +36,7 @@ class Offer:
     def five_for_amount(self):
         return self.offer_type is SpecialOfferType.FIVE_FOR_AMOUNT
 
-    def two_for_amount(self):
+    def is_two_for_amount(self):
         return self.offer_type is SpecialOfferType.TWO_FOR_AMOUNT
 
     def is_ten_percent_discount(self):
