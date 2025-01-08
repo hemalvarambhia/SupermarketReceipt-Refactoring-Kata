@@ -11,5 +11,5 @@ The starting position for this exercise contains the code for setting up the Tel
 
 ## Setup
 - make a venv
-- install requirements, e.g. `python -m pip install -r requirements.txt`
+- install requirements, e.g. `python -m pip install -r requirements.txt` or even `pipenv install pytest approvaltests pytest-approvaltests coverage`
 - use pytest to run the tests: `PYTHONPATH=src:tests pipenv run pytest`
