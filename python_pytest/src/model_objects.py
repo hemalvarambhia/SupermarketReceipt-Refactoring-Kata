@@ -33,7 +33,7 @@ class Offer:
     def three_for_two(self):
         return self.offer_type == SpecialOfferType.THREE_FOR_TWO
 
-    def five_for_amount(self):
+    def is_five_for_amount(self):
         return self.offer_type is SpecialOfferType.FIVE_FOR_AMOUNT
 
     def is_two_for_amount(self):

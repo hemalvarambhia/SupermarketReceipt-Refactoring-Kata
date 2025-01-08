@@ -46,7 +46,7 @@ class ShoppingCart:
                         discount_n = unit_price * quantity - total
                         discount = Discount(p, "2 for " + str(offer.argument), -discount_n)
 
-                if offer.five_for_amount():
+                if offer.is_five_for_amount():
                     x = 5
 
                 number_of_x = math.floor(quantity_as_int / x)
@@ -59,7 +59,7 @@ class ShoppingCart:
                     discount = Discount(p, str(offer.argument) + "% off",
                                         -quantity * unit_price * offer.argument / 100.0)
 
-                if offer.five_for_amount() and quantity_as_int >= 5:
+                if offer.is_five_for_amount() and quantity_as_int >= 5:
                     discount_total = unit_price * quantity - (
                                 offer.argument * number_of_x + quantity_as_int % 5 * unit_price)
                     discount = Discount(p, str(x) + " for " + str(offer.argument), -discount_total)
