@@ -42,8 +42,7 @@ class ShoppingCart:
 
                 if offer.is_ten_percent_discount():
                     percent = offer.argument
-                    discount_amount = -quantity * unit_price * percent / 100.0
-                    discount = self.ten_percent_off(percent, p, discount_amount)
+                    discount = self.ten_percent_off(percent, p, quantity, unit_price)
 
                 if offer.is_three_for_two() and int(quantity) > 2:
                     discount = self.three_for_two_on(p, quantity, unit_price)
@@ -64,5 +63,6 @@ class ShoppingCart:
         discount = Discount(p, "3 for 2", -discount_amount)
         return discount
 
-    def ten_percent_off(self, percent, p, amount):
-        return Discount(p, str(percent) + "% off", amount)
+    def ten_percent_off(self, percent, p, quantity, unit_price):
+        discount_amount = -quantity * unit_price * percent / 100.0
+        return Discount(p, str(percent) + "% off", discount_amount)
