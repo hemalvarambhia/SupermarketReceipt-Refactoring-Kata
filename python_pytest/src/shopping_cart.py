@@ -15,6 +15,7 @@ class ShoppingCart:
 
     @property
     def items(self):
+        """Returns the items in the shopping cart."""
         return self._items
 
     def add_item(self, product):
@@ -23,6 +24,7 @@ class ShoppingCart:
 
     @property
     def product_quantities(self):
+        """Returns the products in the shopping cart and the quantity purchased."""
         return self._product_quantities
 
     def add_item_quantity(self, product, quantity):
