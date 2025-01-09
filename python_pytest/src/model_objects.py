@@ -32,20 +32,20 @@ class Offer:
 
     def calculate_discount_on(self, offer, quantity, unit_price):
         """Calculates the discount available from the offer on a qualifying product."""
-        if offer.is_two_for_amount() and int(quantity) >= 2:
-            total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
+        if self.is_two_for_amount() and int(quantity) >= 2:
+            total = self.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
             discount_amount = unit_price * quantity - total
-            return Discount(offer.product, "2 for " + str(offer.argument), -discount_amount)
-        if offer.is_ten_percent_discount():
-            percent = offer.argument
-            return self.ten_percent_off(percent, offer.product, quantity, unit_price)
-        if offer.is_three_for_two() and int(quantity) > 2:
-            return self.three_for_two_on(offer.product, quantity, unit_price)
-        if offer.is_five_for_amount() and int(quantity) >= 5:
+            return Discount(self.product, "2 for " + str(self.argument), -discount_amount)
+        if self.is_ten_percent_discount():
+            percent = self.argument
+            return self.ten_percent_off(percent, self.product, quantity, unit_price)
+        if self.is_three_for_two() and int(quantity) > 2:
+            return self.three_for_two_on(self.product, quantity, unit_price)
+        if self.is_five_for_amount() and int(quantity) >= 5:
             number_of_x = math.floor(int(quantity) / 5)
             discount_amount = unit_price * quantity - (
-                    offer.argument * number_of_x + int(quantity) % 5 * unit_price)
-            return Discount(offer.product, "5 for " + str(offer.argument), -discount_amount)
+                    self.argument * number_of_x + int(quantity) % 5 * unit_price)
+            return Discount(self.product, "5 for " + str(self.argument), -discount_amount)
         return None
 
     def three_for_two_on(self, p, quantity, unit_price):
