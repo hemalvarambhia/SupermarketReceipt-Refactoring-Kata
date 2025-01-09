@@ -1,6 +1,4 @@
-import math
-
-from model_objects import ProductQuantity, Discount
+from model_objects import ProductQuantity
 
 
 class ShoppingCart:
