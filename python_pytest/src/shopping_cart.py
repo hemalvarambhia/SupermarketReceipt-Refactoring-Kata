@@ -57,6 +57,7 @@ class ShoppingCart:
                     receipt.add_discount(discount)
 
     def three_for_two_on(self, p, quantity, unit_price):
+        """Computes a three for two discount on product"""
         number_of_x = math.floor(int(quantity) / 3)
         discount_amount = quantity * unit_price - (
                 (number_of_x * 2 * unit_price) + int(quantity) % 3 * unit_price)
@@ -64,5 +65,6 @@ class ShoppingCart:
         return discount
 
     def ten_percent_off(self, percent, p, quantity, unit_price):
+        """Computes a 10% off discount on product"""
         discount_amount = -quantity * unit_price * percent / 100.0
         return Discount(p, str(percent) + "% off", discount_amount)
