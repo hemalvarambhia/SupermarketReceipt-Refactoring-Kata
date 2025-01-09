@@ -25,6 +25,7 @@ class ShoppingCart:
         return self._product_quantities
 
     def add_item_quantity(self, product, quantity):
+        """Add an item to the shopping cart."""
         self._items.append(ProductQuantity(product, quantity))
         if product in self._product_quantities:
             self._product_quantities[product] = self._product_quantities[product] + quantity
