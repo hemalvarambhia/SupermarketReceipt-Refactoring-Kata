@@ -33,7 +33,6 @@ class ShoppingCart:
                 offer = offers[p]
                 unit_price = catalog.unit_price(p)
                 discount = None
-                x = 1
 
                 if offer.is_two_for_amount():
                     if int(quantity) >= 2:
