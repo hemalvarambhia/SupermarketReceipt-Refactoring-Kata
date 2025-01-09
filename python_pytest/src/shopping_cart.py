@@ -34,8 +34,6 @@ class ShoppingCart:
                 unit_price = catalog.unit_price(p)
                 discount = None
                 x = 1
-                if offer.is_three_for_two():
-                    x = 3
 
                 if offer.is_two_for_amount():
                     if int(quantity) >= 2:
@@ -50,6 +48,8 @@ class ShoppingCart:
 
                 if offer.is_five_for_amount():
                     x = 5
+                if offer.is_three_for_two():
+                    x = 3
 
                 number_of_x = math.floor(int(quantity) / x)
                 if offer.is_three_for_two() and int(quantity) > 2:
