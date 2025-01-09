@@ -40,11 +40,10 @@ class ShoppingCart:
         """
         Calculates the discount available from the offer on a qualifying product.
         """
-        if offer.is_two_for_amount():
-            if int(quantity) >= 2:
-                total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
-                discount_amount = unit_price * quantity - total
-                return Discount(p, "2 for " + str(offer.argument), -discount_amount)
+        if offer.is_two_for_amount() and int(quantity) >= 2:
+            total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
+            discount_amount = unit_price * quantity - total
+            return Discount(p, "2 for " + str(offer.argument), -discount_amount)
         if offer.is_ten_percent_discount():
             percent = offer.argument
             return self.ten_percent_off(percent, p, quantity, unit_price)
