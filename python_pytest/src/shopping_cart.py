@@ -42,6 +42,6 @@ class ShoppingCart:
             if p in offers.keys():
                 offer = offers[p]
                 unit_price = catalog.unit_price(p)
-                discount = offer.calculate_discount_on(offer, quantity, unit_price)
+                discount = offer.calculate_discount_on(quantity, unit_price)
                 if discount:
                     receipt.add_discount(discount)
