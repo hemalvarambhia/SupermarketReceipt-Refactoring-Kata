@@ -61,7 +61,7 @@ class ShoppingCart:
                     number_of_x = math.floor(int(quantity) / 5)
                     discount_total = unit_price * quantity - (
                                 offer.argument * number_of_x + int(quantity) % 5 * unit_price)
-                    discount = Discount(p, str(x) + " for " + str(offer.argument), -discount_total)
+                    discount = Discount(p, str(5) + " for " + str(offer.argument), -discount_total)
 
                 if discount:
                     receipt.add_discount(discount)
