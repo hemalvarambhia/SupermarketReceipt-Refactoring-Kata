@@ -54,7 +54,7 @@ class ShoppingCart:
             return Discount(offer.product, "2 for " + str(offer.argument), -discount_amount)
         if offer.is_ten_percent_discount():
             percent = offer.argument
-            return self.ten_percent_off(percent, p, quantity, unit_price)
+            return self.ten_percent_off(percent, offer.product, quantity, unit_price)
         if offer.is_three_for_two() and int(quantity) > 2:
             return self.three_for_two_on(offer.product, quantity, unit_price)
         if offer.is_five_for_amount() and int(quantity) >= 5:
