@@ -4,7 +4,11 @@ from model_objects import ProductQuantity, Discount
 
 
 class ShoppingCart:
-
+    """
+    A shopping cart whose responsibility are:
+    - to store products put in them,
+    - knows how to calculate the discounts on the offers on products.
+    """
     def __init__(self):
         self._items = []
         self._product_quantities = {}
