@@ -13,3 +13,6 @@ The starting position for this exercise contains the code for setting up the Tel
 - make a venv
 - install requirements, e.g. `python -m pip install -r requirements.txt` or `pipenv install pytest pylint approvaltests pytest-approvaltests coverage virtualenv`
 - use pytest to run the tests `PYTHONPATH=src:tests pipenv run pytest`
+
+## Pylint
+- Run with `pipenv run pylint path/to/file`
