@@ -28,6 +28,10 @@ class ShoppingCart:
             self._product_quantities[product] = quantity
 
     def handle_offers(self, receipt, offers, catalog):
+        """
+        Using the offers available on products, the shopping cart looks at how many qualifying
+        products were purchased and uses the unit price to calculate the discount on them.
+        """
         for p, quantity in self._product_quantities.items():
             if p in offers.keys():
                 offer = offers[p]
