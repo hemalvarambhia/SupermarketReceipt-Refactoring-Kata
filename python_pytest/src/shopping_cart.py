@@ -11,6 +11,10 @@ class ShoppingCart:
 
     @property
     def items(self):
+        """
+        Returns clients the contents of the shopping cart.
+        :returns: the contents of the shopping cart
+        """
         return self._items
 
     def add_item(self, product):
