@@ -22,7 +22,7 @@ class ShoppingCart:
 
     def add_item_quantity(self, product, quantity):
         self._items.append(ProductQuantity(product, quantity))
-        if product in self._product_quantities.keys():
+        if product in self._product_quantities:
             self._product_quantities[product] = self._product_quantities[product] + quantity
         else:
             self._product_quantities[product] = quantity
