@@ -32,8 +32,8 @@ class ShoppingCart:
             if p in offers.keys():
                 offer = offers[p]
                 unit_price = catalog.unit_price(p)
+                # Calculate the discount on product p
                 discount = None
-
                 if offer.is_two_for_amount():
                     if int(quantity) >= 2:
                         total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
@@ -53,7 +53,7 @@ class ShoppingCart:
                     discount_amount = unit_price * quantity - (
                                 offer.argument * number_of_x + int(quantity) % 5 * unit_price)
                     discount = Discount(p, str(5) + " for " + str(offer.argument), -discount_amount)
-
+                # end of calculate discount on p
                 if discount:
                     receipt.add_discount(discount)
 
