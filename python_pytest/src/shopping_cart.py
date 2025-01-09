@@ -18,6 +18,17 @@ class ShoppingCart:
         return self._items
 
     def add_item(self, product):
+        """
+        Adds a product to the shopping cart.
+        :param product:
+        Side effect: a single unit of Product added to items,
+        quantity of product purchased incremented by 1.
+
+        :example:
+        shopping_cart = ShoppingCart()
+        product = Product(name='cheese', unit=ProductUnit.EACH)
+        shopping_cart.add_item(product)
+        """
         self.add_item_quantity(product, 1.0)
 
     @property
