@@ -32,29 +32,31 @@ class ShoppingCart:
             if p in offers.keys():
                 offer = offers[p]
                 unit_price = catalog.unit_price(p)
-                # Calculate the discount on product p
-                discount = None
-                if offer.is_two_for_amount():
-                    if int(quantity) >= 2:
-                        total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
-                        discount_amount = unit_price * quantity - total
-                        discount = Discount(p, "2 for " + str(offer.argument), -discount_amount)
-
-                if offer.is_ten_percent_discount():
-                    percent = offer.argument
-                    discount = self.ten_percent_off(percent, p, quantity, unit_price)
-
-                if offer.is_three_for_two() and int(quantity) > 2:
-                    discount = self.three_for_two_on(p, quantity, unit_price)
-
-                if offer.is_five_for_amount() and int(quantity) >= 5:
-                    number_of_x = math.floor(int(quantity) / 5)
-                    discount_amount = unit_price * quantity - (
-                                offer.argument * number_of_x + int(quantity) % 5 * unit_price)
-                    discount = Discount(p, str(5) + " for " + str(offer.argument), -discount_amount)
-                # end of calculate discount on p
+                discount = self.calculate_discount_on(p, offer, quantity, unit_price)
                 if discount:
                     receipt.add_discount(discount)
+
+    def calculate_discount_on(self, p, offer, quantity, unit_price):
+        """
+        Calculates the discount available from the offer on a qualifying product.
+        """
+        discount = None
+        if offer.is_two_for_amount():
+            if int(quantity) >= 2:
+                total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
+                discount_amount = unit_price * quantity - total
+                discount = Discount(p, "2 for " + str(offer.argument), -discount_amount)
+        if offer.is_ten_percent_discount():
+            percent = offer.argument
+            discount = self.ten_percent_off(percent, p, quantity, unit_price)
+        if offer.is_three_for_two() and int(quantity) > 2:
+            discount = self.three_for_two_on(p, quantity, unit_price)
+        if offer.is_five_for_amount() and int(quantity) >= 5:
+            number_of_x = math.floor(int(quantity) / 5)
+            discount_amount = unit_price * quantity - (
+                    offer.argument * number_of_x + int(quantity) % 5 * unit_price)
+            discount = Discount(p, str(5) + " for " + str(offer.argument), -discount_amount)
+        return discount
 
     def three_for_two_on(self, p, quantity, unit_price):
         """Computes a three for two discount on product"""
