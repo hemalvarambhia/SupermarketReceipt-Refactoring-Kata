@@ -53,7 +53,7 @@ class ShoppingCart:
             number_of_x = math.floor(int(quantity) / 5)
             discount_amount = unit_price * quantity - (
                     offer.argument * number_of_x + int(quantity) % 5 * unit_price)
-            return Discount(p, str(5) + " for " + str(offer.argument), -discount_amount)
+            return Discount(p, "5 for " + str(offer.argument), -discount_amount)
         return None
 
     def three_for_two_on(self, p, quantity, unit_price):
