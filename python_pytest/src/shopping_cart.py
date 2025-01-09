@@ -46,11 +46,6 @@ class ShoppingCart:
                     amount = -quantity * unit_price * percent / 100.0
                     discount = self.ten_percent_off(percent, p, amount)
 
-                if offer.is_five_for_amount():
-                    x = 5
-                if offer.is_three_for_two():
-                    x = 3
-
                 if offer.is_three_for_two() and int(quantity) > 2:
                     number_of_x = math.floor(int(quantity) / 3)
                     discount_amount = quantity * unit_price - (
