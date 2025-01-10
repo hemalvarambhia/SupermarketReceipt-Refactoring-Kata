@@ -30,7 +30,7 @@ class Offer:
         self.product = product
         self.argument = argument
 
-    def calculate_discount_on(self, p, offer, quantity, unit_price):
+    def calculate_discount_on(self, offer, quantity, unit_price):
         """
         Calculates the discount on the product if there is an offer available.
         :param p:
