@@ -37,6 +37,13 @@ class Offer:
         """
         return self.offer_type == SpecialOfferType.TWO_FOR_AMOUNT and quantity >= 2
 
+    def is_three_for_two(self, quantity):
+        """
+        Identifies whether an offer is three-for-two e.g. three for the price of two
+        :return: true | false
+        """
+        return self.offer_type == SpecialOfferType.THREE_FOR_TWO and quantity > 2
+
 
 class Discount:
     def __init__(self, product, description, discount_amount):
