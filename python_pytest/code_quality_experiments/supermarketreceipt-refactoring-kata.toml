@@ -16,6 +16,7 @@ select = [
     "T",  # flake8-tidy-imports
     "UP", # pyupgrade
     "W",  # pycodestyle warning
+    "C",  # McCabe complexity
 ]
 ignore = [
     "D100", # Missing docstring in public module
