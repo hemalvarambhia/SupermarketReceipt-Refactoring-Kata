@@ -45,6 +45,13 @@ class ShoppingCart:
         return self._product_quantities
 
     def add_item_quantity(self, product, quantity):
+        """
+        Adds a specified quantity of product to the shopping cart.
+        :param product: Product
+        :param quantity: int, float
+        Side effect: a specified quantity of Product added to items, and ProductQuantities
+        for product updated
+        """
         self._items.append(ProductQuantity(product, quantity))
         if product in self._product_quantities:
             self._product_quantities[product] = self._product_quantities[product] + quantity
