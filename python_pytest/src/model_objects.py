@@ -30,6 +30,13 @@ class Offer:
         self.product = product
         self.argument = argument
 
+    def is_two_for_amount(self, quantity):
+        """
+        Identifies whether an offer is two-for-amount e.g. two for the price of one
+        :return: true | false
+        """
+        return self.offer_type == SpecialOfferType.TWO_FOR_AMOUNT and quantity >= 2
+
 
 class Discount:
     def __init__(self, product, description, discount_amount):

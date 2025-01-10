@@ -90,7 +90,7 @@ class ShoppingCart:
                 if offer.offer_type == SpecialOfferType.THREE_FOR_TWO:
                     x = 3
 
-                elif offer.offer_type == SpecialOfferType.TWO_FOR_AMOUNT and int(quantity) >= 2:
+                elif offer.is_two_for_amount(int(quantity)):
                     total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
                     discount_n = unit_price * quantity - total
                     discount = Discount(p, "2 for " + str(offer.argument), -discount_n)
