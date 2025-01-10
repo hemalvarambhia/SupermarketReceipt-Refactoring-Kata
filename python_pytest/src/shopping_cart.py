@@ -1,6 +1,6 @@
 import math
 
-from model_objects import ProductQuantity, SpecialOfferType, Discount
+from model_objects import ProductQuantity, Discount
 
 
 class ShoppingCart:
@@ -86,7 +86,6 @@ class ShoppingCart:
                 offer = offers[p]
                 unit_price = catalog.unit_price(p)
                 discount = None
-                x = 1
 
                 if offer.is_two_for_amount(int(quantity)):
                     total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
