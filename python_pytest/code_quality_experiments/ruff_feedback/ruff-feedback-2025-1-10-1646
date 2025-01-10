@@ -1,0 +1,5 @@
+src/shopping_cart.py:30: [C901] `handle_offers` is too complex (10 > 5)
+src/shopping_cart.py:40: [PLR2004] Magic value used in comparison, consider replacing `2` with a constant variable
+src/shopping_cart.py:49: [F841] Local variable `x` is assigned to but never used
+src/shopping_cart.py:51: [PLR2004] Magic value used in comparison, consider replacing `2` with a constant variable
+src/shopping_cart.py:61: [PLR2004] Magic value used in comparison, consider replacing `5` with a constant variable

@@ -49,7 +49,7 @@ class ShoppingCart:
                     x = 5
 
                 if offer.offer_type == SpecialOfferType.THREE_FOR_TWO and quantity_as_int > 2:
-                    number_of_x = math.floor(quantity_as_int / x)
+                    number_of_x = math.floor(quantity_as_int / 3)
                     discount_amount = quantity * unit_price - (
                                 (number_of_x * 2 * unit_price) + quantity_as_int % 3 * unit_price)
                     discount = Discount(p, "3 for 2", -discount_amount)
@@ -59,10 +59,10 @@ class ShoppingCart:
                                         -quantity * unit_price * offer.argument / 100.0)
 
                 if offer.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT and quantity_as_int >= 5:
-                    number_of_x = math.floor(quantity_as_int / x)
+                    number_of_x = math.floor(quantity_as_int / 5)
                     discount_total = unit_price * quantity - (
                                 offer.argument * number_of_x + quantity_as_int % 5 * unit_price)
-                    discount = Discount(p, str(x) + " for " + str(offer.argument), -discount_total)
+                    discount = Discount(p, str(5) + " for " + str(offer.argument), -discount_total)
 
                 if discount:
                     receipt.add_discount(discount)
