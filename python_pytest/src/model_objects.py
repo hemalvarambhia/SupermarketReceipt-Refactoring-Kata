@@ -30,6 +30,9 @@ class Offer:
         self.product = product
         self.argument = argument
 
+    def is_two_for_amount(self, quantity):
+        return self.offer_type == SpecialOfferType.TWO_FOR_AMOUNT and quantity >= 2
+
 
 class Discount:
     def __init__(self, product, description, discount_amount):
