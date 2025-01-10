@@ -44,6 +44,8 @@ class Offer:
         """
         return self.offer_type == SpecialOfferType.THREE_FOR_TWO and quantity > 2
 
+    def is_five_for_amount(self, quantity):
+        return self.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT and quantity >= 5
 
 class Discount:
     def __init__(self, product, description, discount_amount):

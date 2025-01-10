@@ -105,7 +105,7 @@ class ShoppingCart:
                             (number_of_x * 2 * unit_price) + int(quantity) % 3 * unit_price)
                     discount = Discount(p, "3 for 2", -discount_amount)
 
-                if offer.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT and int(quantity) >= 5:
+                if offer.is_five_for_amount(int(quantity)):
                     discount_total = unit_price * quantity - (
                             offer.argument * number_of_x + int(quantity) % 5 * unit_price)
                     discount = Discount(p, str(x) + " for " + str(offer.argument), -discount_total)
