@@ -33,8 +33,6 @@ class Offer:
     def calculate_discount_on(self, quantity, unit_price):
         """
         Calculates the discount on the product if there is an offer available.
-        :param p:
-        :param offer:
         :param quantity:
         :param unit_price:
         :return: Discount
