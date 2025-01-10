@@ -1,0 +1,3 @@
+src/shopping_cart.py:42: [PLR2004] Magic value used in comparison, consider replacing `2` with a constant variable
+src/shopping_cart.py:51: [PLR2004] Magic value used in comparison, consider replacing `2` with a constant variable
+src/shopping_cart.py:60: [PLR2004] Magic value used in comparison, consider replacing `5` with a constant variable
