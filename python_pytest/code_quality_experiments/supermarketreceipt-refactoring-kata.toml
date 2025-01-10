@@ -1,8 +1,6 @@
 select = [
     "B",  # flake8-bugbear
     "C4", # flake8-comprehensions
-    "D",  # pydocstyle
-    "E",  # pycodestyle error
     "F",  # pyflakes
     "I",  # isort
     "N",  # pep8-naming
@@ -15,7 +13,6 @@ select = [
     "S",  # flake8-bandit
     "T",  # flake8-tidy-imports
     "UP", # pyupgrade
-    "W",  # pycodestyle warning
     "C",  # McCabe complexity
 ]
 ignore = [
