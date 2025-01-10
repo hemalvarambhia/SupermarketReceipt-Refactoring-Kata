@@ -45,6 +45,10 @@ class Offer:
         return self.offer_type == SpecialOfferType.THREE_FOR_TWO and quantity > 2
 
     def is_five_for_amount(self, quantity):
+        """
+        Identifies whether an offer is five for amount e.g. five for the price of two, or three
+        :return: true | false
+                """
         return self.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT and quantity >= 5
 
 class Discount:
