@@ -4,6 +4,19 @@ from model_objects import ProductQuantity, SpecialOfferType, Discount
 
 
 class ShoppingCart:
+    """
+    Represents a shopping cart containing the products the shopper purchased. Initially empty,
+    items can be added to the cart (a single unit or multiple) and it adds discounts to a receipt
+    when the items in it have special offers on them.
+    Attributes:
+        _items - the items in the shopping cart;
+        _product_quantities - the product and their quantities in the shopping cart;
+    Methods:
+        add_item - adds a single item to the cart (where single unit);
+        add_item_quantity - adds a quantity of items to the cart (kilos or packages);
+        handle_offers - given a receipt, calculates the discount on an item if there is an offer on it and
+        adds it to the receipt;
+    """
 
     def __init__(self):
         self._items = []
