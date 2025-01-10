@@ -27,3 +27,6 @@ lint.ignore = [
     "D212", # Multi-line docstring summary should start at the first line
     "D401", # First line should be in imperative mood
 ]
+[lint.mccabe]
+# Flag errors (`C901`) whenever the complexity level exceeds 5.
+max-complexity = 5
