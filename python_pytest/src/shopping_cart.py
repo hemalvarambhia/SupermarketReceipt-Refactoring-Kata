@@ -59,6 +59,15 @@ class ShoppingCart:
             self._product_quantities[product] = quantity
 
     def handle_offers(self, receipt, offers, catalog):
+        """
+        Given a receipt, the offers available on products and catalog of product prices
+        the method looks at each product in the shopping card, the offer available on it
+        and calculates the discount on the product if there is an offer available.
+        :param receipt: Receipt
+        :param offers: Dictionary of offers
+        :param catalog: Catalog
+        :Side effect: adds the discount on the product if there is to the receipt.
+        """
         for p, quantity in self._product_quantities.items():
             if p in offers.keys():
                 offer = offers[p]
