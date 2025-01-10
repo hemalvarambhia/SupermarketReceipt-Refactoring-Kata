@@ -40,23 +40,23 @@ class Offer:
         :return: Discount
         """
         discount = None
-        if offer.is_two_for_amount(int(quantity)):
-            total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
+        if self.is_two_for_amount(int(quantity)):
+            total = self.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
             discount_n = unit_price * quantity - total
-            discount = Discount(p, "2 for " + str(offer.argument), -discount_n)
-        if offer.is_three_for_two(int(quantity)):
+            discount = Discount(offer.product, "2 for " + str(self.argument), -discount_n)
+        if self.is_three_for_two(int(quantity)):
             number_of_x = math.floor(int(quantity) / 3)
             discount_amount = quantity * unit_price - (
                     (number_of_x * 2 * unit_price) + int(quantity) % 3 * unit_price)
-            discount = Discount(p, "3 for 2", -discount_amount)
-        if offer.is_five_for_amount(int(quantity)):
+            discount = Discount(self.product, "3 for 2", -discount_amount)
+        if self.is_five_for_amount(int(quantity)):
             number_of_x = math.floor(int(quantity) / 5)
             discount_total = unit_price * quantity - (
-                    offer.argument * number_of_x + int(quantity) % 5 * unit_price)
-            discount = Discount(p, str(5) + " for " + str(offer.argument), -discount_total)
-        if offer.is_ten_percent_discount():
-            discount = Discount(p, str(offer.argument) + "% off",
-                                -quantity * unit_price * offer.argument / 100.0)
+                    self.argument * number_of_x + int(quantity) % 5 * unit_price)
+            discount = Discount(self.product, str(5) + " for " + str(self.argument), -discount_total)
+        if self.is_ten_percent_discount():
+            discount = Discount(self.product, str(self.argument) + "% off",
+                                -quantity * unit_price * self.argument / 100.0)
         return discount
 
     def is_two_for_amount(self, quantity):
