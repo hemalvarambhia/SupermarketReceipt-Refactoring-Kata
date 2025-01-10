@@ -1,0 +1,42 @@
+************* Module catalog
+src/catalog.py:9:0: C0305: Trailing newlines (trailing-newlines)
+src/catalog.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src/catalog.py:2:0: C0115: Missing class docstring (missing-class-docstring)
+src/catalog.py:4:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/catalog.py:5:8: W0719: Raising too general exception: Exception (broad-exception-raised)
+src/catalog.py:7:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/catalog.py:8:8: W0719: Raising too general exception: Exception (broad-exception-raised)
+************* Module teller
+src/teller.py:29:0: C0304: Final newline missing (missing-final-newline)
+src/teller.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src/teller.py:5:0: C0115: Missing class docstring (missing-class-docstring)
+src/teller.py:11:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/teller.py:14:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/teller.py:28:4: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module model_objects
+src/model_objects.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src/model_objects.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+src/model_objects.py:4:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+src/model_objects.py:10:0: C0115: Missing class docstring (missing-class-docstring)
+src/model_objects.py:10:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+src/model_objects.py:16:0: C0115: Missing class docstring (missing-class-docstring)
+src/model_objects.py:21:0: C0115: Missing class docstring (missing-class-docstring)
+src/model_objects.py:27:0: C0115: Missing class docstring (missing-class-docstring)
+src/model_objects.py:89:0: C0115: Missing class docstring (missing-class-docstring)
+src/model_objects.py:89:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+************* Module shopping_cart
+src/shopping_cart.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module receipt
+src/receipt.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src/receipt.py:2:0: C0115: Missing class docstring (missing-class-docstring)
+src/receipt.py:2:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+src/receipt.py:10:0: C0115: Missing class docstring (missing-class-docstring)
+src/receipt.py:15:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/receipt.py:23:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/receipt.py:26:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/receipt.py:30:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/receipt.py:34:4: C0116: Missing function or method docstring (missing-function-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 7.42/10 (previous run: 7.34/10, +0.08)
+

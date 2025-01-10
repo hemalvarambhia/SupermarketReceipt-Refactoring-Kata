@@ -53,7 +53,7 @@ class Offer:
             number_of_x = math.floor(int(quantity) / 5)
             discount_total = unit_price * quantity - (
                     self.argument * number_of_x + int(quantity) % 5 * unit_price)
-            discount = Discount(self.product, str(5) + " for " + str(self.argument), -discount_total)
+            discount = Discount(self.product, "5 for " + str(self.argument), -discount_total)
         if self.is_ten_percent_discount():
             discount = Discount(self.product, str(self.argument) + "% off",
                                 -quantity * unit_price * self.argument / 100.0)
