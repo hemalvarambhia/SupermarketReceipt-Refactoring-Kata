@@ -30,7 +30,7 @@ class Offer:
         self.product = product
         self.argument = argument
 
-    def calculate_discount_on(self, offer, quantity, unit_price):
+    def calculate_discount_on(self, quantity, unit_price):
         """
         Calculates the discount on the product if there is an offer available.
         :param p:
@@ -43,7 +43,7 @@ class Offer:
         if self.is_two_for_amount(int(quantity)):
             total = self.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
             discount_n = unit_price * quantity - total
-            discount = Discount(offer.product, "2 for " + str(self.argument), -discount_n)
+            discount = Discount(self.product, "2 for " + str(self.argument), -discount_n)
         if self.is_three_for_two(int(quantity)):
             number_of_x = math.floor(int(quantity) / 3)
             discount_amount = quantity * unit_price - (
