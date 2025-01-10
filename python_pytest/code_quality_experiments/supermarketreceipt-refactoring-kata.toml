@@ -33,3 +33,7 @@ max-complexity = 4
 
 [lint.pylint]
 max-args = 4
+max-locals = 15   # Set the limit for the number of local variables
+max-returns = 6   # Set the limit for the number of return statements
+max-statements = 10  # Set the limit for the number of statements
+max-public-methods = 20  # Set the limit for the number of public methods in a class
