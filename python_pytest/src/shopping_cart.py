@@ -33,6 +33,15 @@ class ShoppingCart:
 
     @property
     def product_quantities(self):
+        """
+        Returns clients the products in the shopping cart and the quantity purchased.
+        :return: ProductQuantities
+        :example:
+        shopping_cart = ShoppingCart()
+        product = Product(name='cheese', unit=ProductUnit.EACH)
+        shopping_cart.add_item(product)
+        shopping_cart.product_quantities
+        """
         return self._product_quantities
 
     def add_item_quantity(self, product, quantity):
