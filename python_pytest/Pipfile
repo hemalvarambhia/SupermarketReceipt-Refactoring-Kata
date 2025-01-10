@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pytest = "*"
+ruff = "*"
+pylint = "*"
+approvaltests = "*"
+pytest-approvaltests = "*"
+coverage = "*"
+virtualenv = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
