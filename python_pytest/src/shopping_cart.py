@@ -33,8 +33,7 @@ class ShoppingCart:
             if p in offers.keys():
                 offer = offers[p]
                 unit_price = catalog.unit_price(p)
-                quantity_as_int = int(quantity)
-                discount = self.calculate_discount_on(p, offer, quantity, quantity_as_int, unit_price)
+                discount = self.calculate_discount_on(p, offer, quantity, int(quantity), unit_price)
 
                 if discount:
                     receipt.add_discount(discount)
