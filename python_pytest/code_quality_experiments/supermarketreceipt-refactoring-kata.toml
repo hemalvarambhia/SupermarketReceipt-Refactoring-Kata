@@ -30,3 +30,6 @@ lint.ignore = [
 [lint.mccabe]
 # Flag errors (`C901`) whenever the complexity level exceeds 5.
 max-complexity = 4
+
+[lint.pylint]
+max-args = 4
