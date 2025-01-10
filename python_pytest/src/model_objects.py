@@ -31,7 +31,7 @@ class Offer:
         self.product = product
         self.argument = argument
 
-    def calculate_discount_on(self, p, offer, quantity, unit_price):
+    def calculate_discount_on(self, quantity, unit_price):
         discount = None
         if self.is_two_for_amount(int(quantity)):
             total = self.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
