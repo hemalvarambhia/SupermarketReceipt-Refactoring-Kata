@@ -13,3 +13,11 @@ The starting position for this exercise contains the code for setting up the Tel
 - make a venv
 - install requirements, e.g. `python -m pip install -r requirements.txt` or `pipenv install pytest ruff pylint approvaltests pytest-approvaltests coverage virtualenv`
 - use pytest to run the tests e.g. PYTHONPATH=src:tests pipenv run pytest
+
+## Ruff
+
+To run `ruff`:
+1. `source code_quality_experiments/code_quality_experiments.sh`; and then you can run
+1. `ruff_based_code_quality path/to/file`
+
+
