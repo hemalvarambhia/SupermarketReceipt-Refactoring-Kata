@@ -14,8 +14,8 @@ class ShoppingCart:
     Methods:
         add_item - adds a single item to the cart (where single unit);
         add_item_quantity - adds a quantity of items to the cart (kilos or packages);
-        handle_offers - given a receipt, calculates the discount on an item if there is an offer on it and
-        adds it to the receipt;
+        handle_offers - given a receipt, calculates the discount on an item if there is an offer
+        on it and adds it to the receipt;
     """
 
     def __init__(self):
