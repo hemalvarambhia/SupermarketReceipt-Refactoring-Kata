@@ -99,16 +99,17 @@ class ShoppingCart:
                 if offer.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT:
                     x = 5
 
-                number_of_x = math.floor(int(quantity) / x)
                 if offer.is_three_for_two(int(quantity)):
+                    number_of_x = math.floor(int(quantity) / 3)
                     discount_amount = quantity * unit_price - (
                             (number_of_x * 2 * unit_price) + int(quantity) % 3 * unit_price)
                     discount = Discount(p, "3 for 2", -discount_amount)
 
                 if offer.is_five_for_amount(int(quantity)):
+                    number_of_x = math.floor(int(quantity) / 5)
                     discount_total = unit_price * quantity - (
                             offer.argument * number_of_x + int(quantity) % 5 * unit_price)
-                    discount = Discount(p, str(x) + " for " + str(offer.argument), -discount_total)
+                    discount = Discount(p, str(5) + " for " + str(offer.argument), -discount_total)
 
                 if offer.is_ten_percent_discount():
                     discount = Discount(p, str(offer.argument) + "% off",
