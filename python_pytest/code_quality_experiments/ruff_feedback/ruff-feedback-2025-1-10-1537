@@ -1,0 +1,4 @@
+src/shopping_cart.py:30: [C901] `handle_offers` is too complex (11 > 10)
+src/shopping_cart.py:43: [PLR2004] Magic value used in comparison, consider replacing `2` with a constant variable
+src/shopping_cart.py:52: [PLR2004] Magic value used in comparison, consider replacing `2` with a constant variable
+src/shopping_cart.py:61: [PLR2004] Magic value used in comparison, consider replacing `5` with a constant variable
