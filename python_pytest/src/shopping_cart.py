@@ -33,12 +33,12 @@ class ShoppingCart:
             if p in offers.keys():
                 offer = offers[p]
                 unit_price = catalog.unit_price(p)
-                discount = self.calculate_discount_on(p, offer, quantity, int(quantity), unit_price)
+                discount = self.calculate_discount_on(p, offer, quantity, unit_price)
 
                 if discount:
                     receipt.add_discount(discount)
 
-    def calculate_discount_on(self, p, offer, quantity, quantity_as_int, unit_price):
+    def calculate_discount_on(self, p, offer, quantity, unit_price):
         discount = None
         if offer.offer_type == SpecialOfferType.TWO_FOR_AMOUNT and int(quantity) >= 2:
             total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
