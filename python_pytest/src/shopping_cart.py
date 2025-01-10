@@ -110,7 +110,7 @@ class ShoppingCart:
                             offer.argument * number_of_x + int(quantity) % 5 * unit_price)
                     discount = Discount(p, str(x) + " for " + str(offer.argument), -discount_total)
 
-                if offer.offer_type == SpecialOfferType.TEN_PERCENT_DISCOUNT:
+                if offer.is_ten_percent_discount():
                     discount = Discount(p, str(offer.argument) + "% off",
                                         -quantity * unit_price * offer.argument / 100.0)
 

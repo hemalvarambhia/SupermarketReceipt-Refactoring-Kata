@@ -46,11 +46,17 @@ class Offer:
 
     def is_five_for_amount(self, quantity):
         """
-        Identifies whether an offer is five for amount e.g. five for the price of two, or three
+        Identifies whether an offer is five for amount e.g. five for the price of two, or three.
         :return: true | false
-                """
+        """
         return self.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT and quantity >= 5
 
+    def is_ten_percent_discount(self):
+        """
+        Identifies whether an offer is ten percent off e.g. 10% percent off.
+        :return: true | false
+                """
+        return self.offer_type == SpecialOfferType.TEN_PERCENT_DISCOUNT
 class Discount:
     def __init__(self, product, description, discount_amount):
         self.product = product
