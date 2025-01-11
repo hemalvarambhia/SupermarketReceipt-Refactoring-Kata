@@ -35,7 +35,7 @@ class Offer:
         discount = None
         if self.is_two_for_amount(int(quantity)):
             discount = self.__two_for_amount(quantity, unit_price)
-        if self.offer_type == SpecialOfferType.THREE_FOR_TWO and int(quantity) > 2:
+        if self.is_three_for_two(int(quantity)):
             discount = self.__three_for_two(quantity, unit_price)
         if self.offer_type == SpecialOfferType.TEN_PERCENT_DISCOUNT:
             discount = Discount(self.product, str(self.argument) + "% off",
@@ -43,6 +43,9 @@ class Offer:
         if self.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT and int(quantity) >= 5:
             discount = self.__five_for_amount(quantity, unit_price)
         return discount
+
+    def is_three_for_two(self, quantity):
+        return self.offer_type == SpecialOfferType.THREE_FOR_TWO and quantity > 2
 
     def __five_for_amount(self, quantity, unit_price):
         number_of_x = math.floor(int(quantity) / 5)
