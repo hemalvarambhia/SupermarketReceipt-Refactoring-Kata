@@ -43,9 +43,8 @@ class Offer:
         return None
 
     def ten_percent_off(self, quantity, unit_price):
-        discount = Discount(self.product, str(self.argument) + "% off",
+        return Discount(self.product, str(self.argument) + "% off",
                             -quantity * unit_price * self.argument / 100.0)
-        return discount
 
     def is_three_for_two(self, quantity):
         return self.offer_type == SpecialOfferType.THREE_FOR_TWO and quantity > 2
@@ -54,15 +53,13 @@ class Offer:
         number_of_x = math.floor(int(quantity) / 5)
         discount_total = unit_price * quantity - (
                 self.argument * number_of_x + int(quantity) % 5 * unit_price)
-        discount = Discount(self.product, str(5) + " for " + str(self.argument), -discount_total)
-        return discount
+        return Discount(self.product, str(5) + " for " + str(self.argument), -discount_total)
 
     def __three_for_two(self, quantity, unit_price):
         number_of_x = math.floor(int(quantity) / 3)
         discount_amount = quantity * unit_price - (
                 (number_of_x * 2 * unit_price) + int(quantity) % 3 * unit_price)
-        discount = Discount(self.product, "3 for 2", -discount_amount)
-        return discount
+        return Discount(self.product, "3 for 2", -discount_amount)
 
     def __two_for_amount(self, quantity, unit_price):
         total = self.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
