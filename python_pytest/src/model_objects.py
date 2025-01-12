@@ -46,10 +46,6 @@ class Offer:
     def __qualifies_for_ten_percent_discount(self):
         return self.offer_type == SpecialOfferType.TEN_PERCENT_DISCOUNT
 
-    def __ten_percent_discount(self, quantity, unit_price):
-        return Discount(self.product, str(self.argument) + "% off",
-                        -quantity * unit_price * self.argument / 100.0)
-
     def __qualifies_for_three_for_two(self, quantity):
         return self.offer_type == SpecialOfferType.THREE_FOR_TWO and quantity > 2
 
@@ -64,11 +60,6 @@ class Offer:
 
     def __qualifies_for_two_for_amount(self, quantity):
         return self.offer_type == SpecialOfferType.TWO_FOR_AMOUNT and quantity >= 2
-
-    def __two_for_amount_discount(self, quantity, unit_price):
-        total = self.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
-        discount_n = unit_price * quantity - total
-        return Discount(self.product, "2 for " + str(self.argument), -discount_n)
 
 
 class ThreeForTwo:
