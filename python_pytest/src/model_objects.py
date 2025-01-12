@@ -53,10 +53,7 @@ class Offer:
         return self.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT and quantity >= 5
 
     def __five_for_amount_discount(self, quantity, unit_price):
-        number_of_x = math.floor(int(quantity) / 5)
-        discount_total = unit_price * quantity - (
-                self.argument * number_of_x + int(quantity) % 5 * unit_price)
-        return Discount(self.product, str(5) + " for " + str(self.argument), -discount_total)
+        return FiveForAmount(self.product, self.argument).discount(quantity, unit_price)
 
     def __qualifies_for_two_for_amount(self, quantity):
         return self.offer_type == SpecialOfferType.TWO_FOR_AMOUNT and quantity >= 2
@@ -83,6 +80,17 @@ class TwoForAmount:
         total = self.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
         discount_n = unit_price * quantity - total
         return Discount(self.product, "2 for " + str(self.argument), -discount_n)
+
+class FiveForAmount:
+    def __init__(self, product, argument):
+        self.product = product
+        self.argument = argument
+
+    def discount(self, quantity, unit_price):
+        number_of_x = math.floor(int(quantity) / 5)
+        discount_total = unit_price * quantity - (
+                self.argument * number_of_x + int(quantity) % 5 * unit_price)
+        return Discount(self.product, str(5) + " for " + str(self.argument), -discount_total)
 
 
 class TenPercentOff:
