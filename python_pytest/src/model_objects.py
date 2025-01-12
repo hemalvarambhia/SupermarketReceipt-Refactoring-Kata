@@ -25,6 +25,7 @@ class SpecialOfferType(Enum):
     TWO_FOR_AMOUNT = 3
     FIVE_FOR_AMOUNT = 4
 
+
 class Offer:
     def __init__(self, offer_type, product, argument):
         self.offer_type = offer_type
@@ -37,7 +38,7 @@ class Offer:
         if self.__qualifies_for_three_for_two(int(quantity)):
             return ThreeForTwo(self.product).discount(quantity, unit_price)
         if self.__qualifies_for_ten_percent_discount():
-            return self.__ten_percent_discount(quantity, unit_price)
+            return TenPercentOff(self.product, self.argument).discount(quantity, unit_price)
         if self.__qualifies_for_five_for_amount(int(quantity)):
             return self.__five_for_amount_discount(quantity, unit_price)
         return None
@@ -47,7 +48,7 @@ class Offer:
 
     def __ten_percent_discount(self, quantity, unit_price):
         return Discount(self.product, str(self.argument) + "% off",
-                            -quantity * unit_price * self.argument / 100.0)
+                        -quantity * unit_price * self.argument / 100.0)
 
     def __qualifies_for_three_for_two(self, quantity):
         return self.offer_type == SpecialOfferType.THREE_FOR_TWO and quantity > 2
@@ -91,6 +92,17 @@ class TwoForAmount:
         total = self.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
         discount_n = unit_price * quantity - total
         return Discount(self.product, "2 for " + str(self.argument), -discount_n)
+
+
+class TenPercentOff:
+
+    def __init__(self, product, percent):
+        self.product = product
+        self.argument = percent
+
+    def discount(self, quantity, unit_price):
+        return Discount(self.product, str(self.argument) + "% off",
+                        -quantity * unit_price * self.argument / 100.0)
 
 
 class Discount:
