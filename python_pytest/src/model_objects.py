@@ -43,6 +43,14 @@ class Offer:
             return FiveForAmount(self.product, self.argument).discount(quantity, unit_price)
         return None
 
+    def offer_of_type(self, offer_type):
+        return {
+            SpecialOfferType.THREE_FOR_TWO: ThreeForTwo(self.product),
+            SpecialOfferType.TEN_PERCENT_DISCOUNT: TenPercentOff(self.product, self.argument),
+            SpecialOfferType.FIVE_FOR_AMOUNT: FiveForAmount(self.product, self.argument),
+            SpecialOfferType.TWO_FOR_AMOUNT: TwoForAmount(self.product, self.argument)
+        }[offer_type]
+
     def __qualifies_for_ten_percent_discount(self):
         return self.offer_type == SpecialOfferType.TEN_PERCENT_DISCOUNT
 
