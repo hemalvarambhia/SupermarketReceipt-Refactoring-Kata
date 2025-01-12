@@ -40,7 +40,7 @@ class Offer:
         if self.__qualifies_for_ten_percent_discount():
             return TenPercentOff(self.product, self.argument).discount(quantity, unit_price)
         if self.__qualifies_for_five_for_amount(int(quantity)):
-            return self.__five_for_amount_discount(quantity, unit_price)
+            return FiveForAmount(self.product, self.argument).discount(quantity, unit_price)
         return None
 
     def __qualifies_for_ten_percent_discount(self):
@@ -51,9 +51,6 @@ class Offer:
 
     def __qualifies_for_five_for_amount(self, quantity):
         return self.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT and quantity >= 5
-
-    def __five_for_amount_discount(self, quantity, unit_price):
-        return FiveForAmount(self.product, self.argument).discount(quantity, unit_price)
 
     def __qualifies_for_two_for_amount(self, quantity):
         return self.offer_type == SpecialOfferType.TWO_FOR_AMOUNT and quantity >= 2
