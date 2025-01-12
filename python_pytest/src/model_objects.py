@@ -69,6 +69,9 @@ class ThreeForTwo:
     def __init__(self, product):
         self.product = product
 
+    def qualifies(self, quantity):
+        return quantity > 2
+
     def discount(self, quantity, unit_price):
         number_of_x = math.floor(int(quantity) / 3)
         discount_amount = quantity * unit_price - (
@@ -90,6 +93,9 @@ class FiveForAmount:
     def __init__(self, product, argument):
         self.product = product
         self.argument = argument
+
+    def qualifies(self, quantity):
+        return quantity >= 5
 
     def discount(self, quantity, unit_price):
         number_of_x = math.floor(int(quantity) / 5)
