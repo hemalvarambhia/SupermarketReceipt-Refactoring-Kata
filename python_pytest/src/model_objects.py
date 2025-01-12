@@ -34,13 +34,13 @@ class Offer:
 
     def calculate_discount_on(self, quantity, unit_price):
         if self.__qualifies_for_two_for_amount(int(quantity)):
-            return TwoForAmount(self.product, self.argument).discount(quantity, unit_price)
+            return self.offer_of_type(self.offer_type).discount(quantity, unit_price)
         if self.__qualifies_for_three_for_two(int(quantity)):
-            return ThreeForTwo(self.product).discount(quantity, unit_price)
+            return self.offer_of_type(self.offer_type).discount(quantity, unit_price)
         if self.__qualifies_for_ten_percent_discount():
-            return TenPercentOff(self.product, self.argument).discount(quantity, unit_price)
+            return self.offer_of_type(self.offer_type).discount(quantity, unit_price)
         if self.__qualifies_for_five_for_amount(int(quantity)):
-            return FiveForAmount(self.product, self.argument).discount(quantity, unit_price)
+            return self.offer_of_type(self.offer_type).discount(quantity, unit_price)
         return None
 
     def offer_of_type(self, offer_type):
