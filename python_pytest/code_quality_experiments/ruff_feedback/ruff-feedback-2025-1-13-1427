@@ -1,0 +1,5 @@
+src/model_objects.py:35: [C901] `calculate_discount_on` is too complex (5 > 4)
+src/model_objects.py:58: [PLR2004] Magic value used in comparison, consider replacing `5` with a constant variable
+src/model_objects.py:61: [PLR2004] Magic value used in comparison, consider replacing `2` with a constant variable
+src/model_objects.py:70: [PLR2004] Magic value used in comparison, consider replacing `2` with a constant variable
+src/model_objects.py:95: [PLR2004] Magic value used in comparison, consider replacing `5` with a constant variable
