@@ -12,17 +12,13 @@ good-names=i,j,k,ex,Run,_
 
 [DESIGN]
 
-# Set the maximum number of arguments for a function or method
-max-args=5
-
 # Set the maximum number of attributes in a class
 max-attributes=2
 
-# Set the maximum number of public methods in a class
-max-public-methods=6
-
+max-args = 4 # Set the maximum number of arguments for a function or method
 max-locals = 15   # Set the limit for the number of local variables
 max-returns = 6   # Set the limit for the number of return statements
 max-branches = 12  # Set the limit for the number of branches
 max-statements = 10  # Set the limit for the number of statements
-max-complexity = 10
+max-complexity = 10 # R1260 flags a method as too complex (McCabe complexity metric)
+max-public-methods=20  # Set the maximum number of public methods in a class
