@@ -13,7 +13,7 @@ good-names=i,j,k,ex,Run,_
 [DESIGN]
 
 # Set the maximum number of attributes in a class
-max-attributes=2
+max-attributes=3
 
 max-args = 4 # Set the maximum number of arguments for a function or method
 max-locals = 15   # Set the limit for the number of local variables
