@@ -25,3 +25,4 @@ max-locals = 15   # Set the limit for the number of local variables
 max-returns = 6   # Set the limit for the number of return statements
 max-branches = 12  # Set the limit for the number of branches
 max-statements = 10  # Set the limit for the number of statements
+max-complexity = 10

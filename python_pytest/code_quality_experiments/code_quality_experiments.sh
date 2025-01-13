@@ -3,3 +3,7 @@
 function ruff_based_code_quality() {
   pipenv run ruff check "$1" --config code_quality_experiments/supermarketreceipt-refactoring-kata.toml
 }
+
+function pylint_based_code_complexity() {
+  pipenv run pylint --load-plugins=pylint.extensions.mccabe "$1"
+}
