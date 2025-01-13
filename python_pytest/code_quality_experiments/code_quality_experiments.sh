@@ -5,5 +5,5 @@ function ruff_based_code_quality() {
 }
 
 function pylint_based_code_complexity() {
-  pipenv run pylint --load-plugins=pylint.extensions.mccabe "$1"
+  pipenv run pylint "$1"
 }
