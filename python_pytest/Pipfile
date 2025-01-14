@@ -11,6 +11,7 @@ approvaltests = "*"
 pytest-approvaltests = "*"
 coverage = "*"
 virtualenv = "*"
+radon = "*"
 
 [dev-packages]
 
