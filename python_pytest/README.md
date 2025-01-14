@@ -13,3 +13,8 @@ The starting position for this exercise contains the code for setting up the Tel
 - make a venv
 - install requirements, e.g. `python -m pip install -r requirements.txt` or `pipenv install pytest ruff pylint approvaltests pytest-approvaltests coverage virtualenv`
 - use pytest to run the tests e.g. PYTHONPATH=src:tests pipenv run pytest
+
+## Radon
+More information on how to use `radon` may be found on the 
+[Github repository](https://github.com/rubik/radon). To run it:
+- when using `pipenv` usage is as follows `pipenv run radon cc <path> -a`
