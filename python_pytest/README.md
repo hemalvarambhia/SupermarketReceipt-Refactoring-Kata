@@ -17,4 +17,6 @@ The starting position for this exercise contains the code for setting up the Tel
 ## Radon
 More information on how to use `radon` may be found on the 
 [Github repository](https://github.com/rubik/radon). To run it:
-- when using `pipenv` usage is as follows `pipenv run radon cc <path> -a`
+- when using `pipenv` usage for McCabe Cyclomatic Complexity Metric is as follows `pipenv run radon cc <path> -a`
+- to calculate the Halstead Complexity Metric, the command is `pipenv run radon hal <path>`
+- to calculate the Maintainability Index, the command is `pipenv run radon mi <path>` 
