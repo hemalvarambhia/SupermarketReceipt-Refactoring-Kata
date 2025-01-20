@@ -34,34 +34,34 @@ class Offer:
     def calculate_discount(self, quantity, unit_price):
         discount = None
         if self.offer_type == SpecialOfferType.TWO_FOR_AMOUNT and int(quantity) >= 2:
-            discount = self.two_for_amount_discount(quantity, unit_price)
+            discount = self.__two_for_amount_discount(quantity, unit_price)
         if self.offer_type == SpecialOfferType.THREE_FOR_TWO and int(quantity) > 2:
-            discount = self.three_for_amount_discount(quantity, unit_price)
+            discount = self.__three_for_amount_discount(quantity, unit_price)
         if self.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT and int(quantity) >= 5:
-            discount = self.five_for_amount_discount(quantity, unit_price)
+            discount = self.__five_for_amount_discount(quantity, unit_price)
         if self.offer_type == SpecialOfferType.TEN_PERCENT_DISCOUNT:
-            discount = self.ten_percent_discount(quantity, unit_price)
+            discount = self.__ten_percent_discount(quantity, unit_price)
         return discount
 
 
-    def two_for_amount_discount(self, quantity, unit_price):
+    def __two_for_amount_discount(self, quantity, unit_price):
         total = self.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
         discount_n = unit_price * quantity - total
         return Discount(self.product, "2 for " + str(self.argument), -discount_n)
 
-    def five_for_amount_discount(self, quantity, unit_price):
+    def __five_for_amount_discount(self, quantity, unit_price):
         number_of_x = math.floor(int(quantity) / 5)
         discount_total = unit_price * quantity - (
                 self.argument * number_of_x + int(quantity) % 5 * unit_price)
         return Discount(self.product, str(5) + " for " + str(self.argument), -discount_total)
 
-    def three_for_amount_discount(self, quantity, unit_price):
+    def __three_for_amount_discount(self, quantity, unit_price):
         number_of_x = math.floor(int(quantity) / 3)
         discount_amount = quantity * unit_price - (
                 (number_of_x * 2 * unit_price) + int(quantity) % 3 * unit_price)
         return Discount(self.product, "3 for 2", -discount_amount)
 
-    def ten_percent_discount(self, quantity, unit_price):
+    def __ten_percent_discount(self, quantity, unit_price):
         return Discount(self.product, str(self.argument) + "% off",
                             -quantity * unit_price * self.argument / 100.0)
 
