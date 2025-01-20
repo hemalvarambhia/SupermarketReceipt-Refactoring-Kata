@@ -52,11 +52,6 @@ class Offer:
     def __qualifies_for_three_for_two_offer(self, quantity):
         return self.offer_type == SpecialOfferType.THREE_FOR_TWO and int(quantity) > 2
 
-    def __two_for_amount_discount(self, quantity, unit_price):
-        total = self.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
-        discount_n = unit_price * quantity - total
-        return Discount(self.product, "2 for " + str(self.argument), -discount_n)
-
     def __five_for_amount_discount(self, quantity, unit_price):
         number_of_x = math.floor(int(quantity) / 5)
         discount_total = unit_price * quantity - (
