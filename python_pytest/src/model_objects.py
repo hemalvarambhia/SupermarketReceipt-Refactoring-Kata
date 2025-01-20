@@ -42,6 +42,10 @@ class Offer:
                 self.argument * number_of_x + int(quantity) % 5 * unit_price)
         return Discount(self.product, str(5) + " for " + str(self.argument), -discount_total)
 
+    def ten_percent_discount(self, quantity, unit_price):
+        return Discount(self.product, str(self.argument) + "% off",
+                            -quantity * unit_price * self.argument / 100.0)
+
 
 class Discount:
     def __init__(self, product, description, discount_amount):

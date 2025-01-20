@@ -46,8 +46,7 @@ class ShoppingCart:
                     discount = offer.five_for_amount_discount(quantity, unit_price)
 
                 if offer.offer_type == SpecialOfferType.TEN_PERCENT_DISCOUNT:
-                    discount = Discount(p, str(offer.argument) + "% off",
-                                        -quantity * unit_price * offer.argument / 100.0)
+                    discount = offer.ten_percent_discount(quantity, unit_price)
 
                 if discount:
                     receipt.add_discount(discount)
