@@ -1,0 +1,22 @@
+{
+  "src/catalog.py": {
+    "mi": 100.0,
+    "rank": "A"
+  },
+  "src/teller.py": {
+    "mi": 65.60879340185666,
+    "rank": "A"
+  },
+  "src/model_objects.py": {
+    "mi": 33.406251172513116,
+    "rank": "A"
+  },
+  "src/shopping_cart.py": {
+    "mi": 56.92978668534456,
+    "rank": "A"
+  },
+  "src/receipt.py": {
+    "mi": 59.19783214931081,
+    "rank": "A"
+  }
+}
