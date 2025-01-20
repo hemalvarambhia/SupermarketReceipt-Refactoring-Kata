@@ -34,9 +34,7 @@ class ShoppingCart:
                 unit_price = catalog.unit_price(p)
                 discount = None
                 if offer.offer_type == SpecialOfferType.TWO_FOR_AMOUNT and int(quantity) >= 2:
-                    total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
-                    discount_n = unit_price * quantity - total
-                    discount = Discount(p, "2 for " + str(offer.argument), -discount_n)
+                    discount = self.__two_for_amount_discount(p, offer, quantity, unit_price)
 
                 if offer.offer_type == SpecialOfferType.THREE_FOR_TWO and int(quantity) > 2:
                     number_of_x = math.floor(int(quantity) / 3)
@@ -56,3 +54,8 @@ class ShoppingCart:
 
                 if discount:
                     receipt.add_discount(discount)
+
+    def __two_for_amount_discount(self, p, offer, quantity, unit_price):
+        total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
+        discount_n = unit_price * quantity - total
+        return Discount(p, "2 for " + str(offer.argument), -discount_n)
