@@ -43,10 +43,7 @@ class ShoppingCart:
                     discount = Discount(p, "3 for 2", -discount_amount)
 
                 if offer.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT and int(quantity) >= 5:
-                    number_of_x = math.floor(int(quantity) / 5)
-                    discount_total = unit_price * quantity - (
-                            offer.argument * number_of_x + int(quantity) % 5 * unit_price)
-                    discount = Discount(p, str(5) + " for " + str(offer.argument), -discount_total)
+                    discount = self.__five_for_amount_discount(offer, p, quantity, unit_price)
 
                 if offer.offer_type == SpecialOfferType.TEN_PERCENT_DISCOUNT:
                     discount = Discount(p, str(offer.argument) + "% off",
@@ -54,3 +51,9 @@ class ShoppingCart:
 
                 if discount:
                     receipt.add_discount(discount)
+
+    def __five_for_amount_discount(self, offer, p, quantity, unit_price):
+        number_of_x = math.floor(int(quantity) / 5)
+        discount_total = unit_price * quantity - (
+                offer.argument * number_of_x + int(quantity) % 5 * unit_price)
+        return Discount(p, str(5) + " for " + str(offer.argument), -discount_total)
