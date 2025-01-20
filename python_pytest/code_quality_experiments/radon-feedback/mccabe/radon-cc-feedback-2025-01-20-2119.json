@@ -1,0 +1,747 @@
+{
+  "src/catalog.py": [
+    {
+      "type": "class",
+      "rank": "A",
+      "endline": 8,
+      "col_offset": 0,
+      "complexity": 2,
+      "lineno": 2,
+      "name": "SupermarketCatalog",
+      "methods": [
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 5,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "SupermarketCatalog",
+          "lineno": 4,
+          "name": "add_product",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 8,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "SupermarketCatalog",
+          "lineno": 7,
+          "name": "unit_price",
+          "closures": []
+        }
+      ]
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 5,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "SupermarketCatalog",
+      "lineno": 4,
+      "name": "add_product",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 8,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "SupermarketCatalog",
+      "lineno": 7,
+      "name": "unit_price",
+      "closures": []
+    }
+  ],
+  "src/teller.py": [
+    {
+      "type": "class",
+      "rank": "A",
+      "endline": 29,
+      "col_offset": 0,
+      "complexity": 2,
+      "lineno": 5,
+      "name": "Teller",
+      "methods": [
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 9,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Teller",
+          "lineno": 7,
+          "name": "__init__",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 12,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Teller",
+          "lineno": 11,
+          "name": "add_special_offer",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 26,
+          "col_offset": 4,
+          "complexity": 2,
+          "classname": "Teller",
+          "lineno": 14,
+          "name": "checks_out_articles_from",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 29,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Teller",
+          "lineno": 28,
+          "name": "product_with_name",
+          "closures": []
+        }
+      ]
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 26,
+      "col_offset": 4,
+      "complexity": 2,
+      "classname": "Teller",
+      "lineno": 14,
+      "name": "checks_out_articles_from",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 9,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Teller",
+      "lineno": 7,
+      "name": "__init__",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 12,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Teller",
+      "lineno": 11,
+      "name": "add_special_offer",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 29,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Teller",
+      "lineno": 28,
+      "name": "product_with_name",
+      "closures": []
+    }
+  ],
+  "src/model_objects.py": [
+    {
+      "type": "method",
+      "rank": "B",
+      "endline": 44,
+      "col_offset": 4,
+      "complexity": 8,
+      "classname": "Offer",
+      "lineno": 34,
+      "name": "calculate_discount",
+      "closures": []
+    },
+    {
+      "type": "class",
+      "rank": "A",
+      "endline": 66,
+      "col_offset": 0,
+      "complexity": 3,
+      "lineno": 28,
+      "name": "Offer",
+      "methods": [
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 32,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Offer",
+          "lineno": 29,
+          "name": "__init__",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "B",
+          "endline": 44,
+          "col_offset": 4,
+          "complexity": 8,
+          "classname": "Offer",
+          "lineno": 34,
+          "name": "calculate_discount",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 50,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Offer",
+          "lineno": 47,
+          "name": "__two_for_amount_discount",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 56,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Offer",
+          "lineno": 52,
+          "name": "__five_for_amount_discount",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 62,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Offer",
+          "lineno": 58,
+          "name": "__three_for_two_discount",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 66,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Offer",
+          "lineno": 64,
+          "name": "__ten_percent_discount",
+          "closures": []
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "rank": "A",
+      "endline": 8,
+      "col_offset": 0,
+      "complexity": 2,
+      "lineno": 5,
+      "name": "Product",
+      "methods": [
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 8,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Product",
+          "lineno": 6,
+          "name": "__init__",
+          "closures": []
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "rank": "A",
+      "endline": 14,
+      "col_offset": 0,
+      "complexity": 2,
+      "lineno": 11,
+      "name": "ProductQuantity",
+      "methods": [
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 14,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "ProductQuantity",
+          "lineno": 12,
+          "name": "__init__",
+          "closures": []
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "rank": "A",
+      "endline": 73,
+      "col_offset": 0,
+      "complexity": 2,
+      "lineno": 69,
+      "name": "Discount",
+      "methods": [
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 73,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Discount",
+          "lineno": 70,
+          "name": "__init__",
+          "closures": []
+        }
+      ]
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 8,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Product",
+      "lineno": 6,
+      "name": "__init__",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 14,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "ProductQuantity",
+      "lineno": 12,
+      "name": "__init__",
+      "closures": []
+    },
+    {
+      "type": "class",
+      "rank": "A",
+      "endline": 19,
+      "col_offset": 0,
+      "complexity": 1,
+      "lineno": 17,
+      "name": "ProductUnit",
+      "methods": []
+    },
+    {
+      "type": "class",
+      "rank": "A",
+      "endline": 26,
+      "col_offset": 0,
+      "complexity": 1,
+      "lineno": 22,
+      "name": "SpecialOfferType",
+      "methods": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 32,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Offer",
+      "lineno": 29,
+      "name": "__init__",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 50,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Offer",
+      "lineno": 47,
+      "name": "__two_for_amount_discount",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 56,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Offer",
+      "lineno": 52,
+      "name": "__five_for_amount_discount",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 62,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Offer",
+      "lineno": 58,
+      "name": "__three_for_two_discount",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 66,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Offer",
+      "lineno": 64,
+      "name": "__ten_percent_discount",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 73,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Discount",
+      "lineno": 70,
+      "name": "__init__",
+      "closures": []
+    }
+  ],
+  "src/shopping_cart.py": [
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 38,
+      "col_offset": 4,
+      "complexity": 4,
+      "classname": "ShoppingCart",
+      "lineno": 30,
+      "name": "handle_offers",
+      "closures": []
+    },
+    {
+      "type": "class",
+      "rank": "A",
+      "endline": 38,
+      "col_offset": 0,
+      "complexity": 2,
+      "lineno": 6,
+      "name": "ShoppingCart",
+      "methods": [
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 10,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "ShoppingCart",
+          "lineno": 8,
+          "name": "__init__",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 14,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "ShoppingCart",
+          "lineno": 13,
+          "name": "items",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 17,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "ShoppingCart",
+          "lineno": 16,
+          "name": "add_item",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 21,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "ShoppingCart",
+          "lineno": 20,
+          "name": "product_quantities",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 28,
+          "col_offset": 4,
+          "complexity": 2,
+          "classname": "ShoppingCart",
+          "lineno": 23,
+          "name": "add_item_quantity",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 38,
+          "col_offset": 4,
+          "complexity": 4,
+          "classname": "ShoppingCart",
+          "lineno": 30,
+          "name": "handle_offers",
+          "closures": []
+        }
+      ]
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 28,
+      "col_offset": 4,
+      "complexity": 2,
+      "classname": "ShoppingCart",
+      "lineno": 23,
+      "name": "add_item_quantity",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 10,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "ShoppingCart",
+      "lineno": 8,
+      "name": "__init__",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 14,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "ShoppingCart",
+      "lineno": 13,
+      "name": "items",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 17,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "ShoppingCart",
+      "lineno": 16,
+      "name": "add_item",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 21,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "ShoppingCart",
+      "lineno": 20,
+      "name": "product_quantities",
+      "closures": []
+    }
+  ],
+  "src/receipt.py": [
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 21,
+      "col_offset": 4,
+      "complexity": 3,
+      "classname": "Receipt",
+      "lineno": 15,
+      "name": "total_price",
+      "closures": []
+    },
+    {
+      "type": "class",
+      "rank": "A",
+      "endline": 7,
+      "col_offset": 0,
+      "complexity": 2,
+      "lineno": 2,
+      "name": "ReceiptItem",
+      "methods": [
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 7,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "ReceiptItem",
+          "lineno": 3,
+          "name": "__init__",
+          "closures": []
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "rank": "A",
+      "endline": 35,
+      "col_offset": 0,
+      "complexity": 2,
+      "lineno": 10,
+      "name": "Receipt",
+      "methods": [
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 13,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Receipt",
+          "lineno": 11,
+          "name": "__init__",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 21,
+          "col_offset": 4,
+          "complexity": 3,
+          "classname": "Receipt",
+          "lineno": 15,
+          "name": "total_price",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 24,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Receipt",
+          "lineno": 23,
+          "name": "add_product",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 27,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Receipt",
+          "lineno": 26,
+          "name": "add_discount",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 31,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Receipt",
+          "lineno": 30,
+          "name": "items",
+          "closures": []
+        },
+        {
+          "type": "method",
+          "rank": "A",
+          "endline": 35,
+          "col_offset": 4,
+          "complexity": 1,
+          "classname": "Receipt",
+          "lineno": 34,
+          "name": "discounts",
+          "closures": []
+        }
+      ]
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 7,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "ReceiptItem",
+      "lineno": 3,
+      "name": "__init__",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 13,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Receipt",
+      "lineno": 11,
+      "name": "__init__",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 24,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Receipt",
+      "lineno": 23,
+      "name": "add_product",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 27,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Receipt",
+      "lineno": 26,
+      "name": "add_discount",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 31,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Receipt",
+      "lineno": 30,
+      "name": "items",
+      "closures": []
+    },
+    {
+      "type": "method",
+      "rank": "A",
+      "endline": 35,
+      "col_offset": 4,
+      "complexity": 1,
+      "classname": "Receipt",
+      "lineno": 34,
+      "name": "discounts",
+      "closures": []
+    }
+  ]
+}
