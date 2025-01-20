@@ -32,16 +32,22 @@ class Offer:
         self.argument = argument
 
     def calculate_discount(self, quantity, unit_price):
-        discount = None
-        if TwoForAmount(self.product, self.argument).qualifies(self.offer_type, quantity):
-            discount = TwoForAmount(self.product, self.argument).discount(quantity, unit_price)
-        if ThreeForTwo(self.product, self.argument).qualifies(self.offer_type, quantity):
-            discount = ThreeForTwo(self.product, self.argument).discount(quantity, unit_price)
-        if FiveForAmount(self.product, self.argument).qualifies(self.offer_type, quantity):
-            discount = FiveForAmount(self.product, self.argument).discount(quantity, unit_price)
-        if TenPercentDiscount(self.product, self.argument).qualifies(self.offer_type, quantity):
-            discount = TenPercentDiscount(self.product, self.argument).discount(quantity, unit_price)
-        return discount
+        offer = self.__applicable_offer(self.offer_type, quantity)
+        if offer is None:
+            return None
+
+        return offer.discount(quantity, unit_price)
+
+
+    def __applicable_offer(self, offer_type, quantity):
+        offers = [
+            TwoForAmount(self.product, self.argument),
+            ThreeForTwo(self.product, self.argument),
+            FiveForAmount(self.product, self.argument),
+            TenPercentDiscount(self.product, self.argument)
+        ]
+
+        return next(filter(lambda offer: offer.qualifies(offer_type, quantity), offers), None)
 
 class TwoForAmount:
     def __init__(self, product, argument):
