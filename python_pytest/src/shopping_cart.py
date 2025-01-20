@@ -56,6 +56,4 @@ class ShoppingCart:
                     receipt.add_discount(discount)
 
     def __two_for_amount_discount(self, p, offer, quantity, unit_price):
-        total = offer.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
-        discount_n = unit_price * quantity - total
-        return Discount(p, "2 for " + str(offer.argument), -discount_n)
+        return offer.two_for_amount_discount(quantity, unit_price)

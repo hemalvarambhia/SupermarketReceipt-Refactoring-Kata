@@ -30,6 +30,11 @@ class Offer:
         self.product = product
         self.argument = argument
 
+    def two_for_amount_discount(self, quantity, unit_price):
+        total = self.argument * (int(quantity) / 2) + int(quantity) % 2 * unit_price
+        discount_n = unit_price * quantity - total
+        return Discount(self.product, "2 for " + str(self.argument), -discount_n)
+
 
 class Discount:
     def __init__(self, product, description, discount_amount):
