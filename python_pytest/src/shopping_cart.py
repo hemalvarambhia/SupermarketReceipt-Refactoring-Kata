@@ -37,10 +37,7 @@ class ShoppingCart:
                     discount = offer.two_for_amount_discount(quantity, unit_price)
 
                 if offer.offer_type == SpecialOfferType.THREE_FOR_TWO and int(quantity) > 2:
-                    number_of_x = math.floor(int(quantity) / 3)
-                    discount_amount = quantity * unit_price - (
-                            (number_of_x * 2 * unit_price) + int(quantity) % 3 * unit_price)
-                    discount = Discount(p, "3 for 2", -discount_amount)
+                    discount = offer.three_for_amount_discount(quantity, unit_price)
 
                 if offer.offer_type == SpecialOfferType.FIVE_FOR_AMOUNT and int(quantity) >= 5:
                     discount = offer.five_for_amount_discount(quantity, unit_price)
