@@ -19,6 +19,6 @@ function mi_complexity() {
 date="$(date "+%Y-%m-%d-%H%M")"
 cyclomatic_complexity code_quality_experiments/radon-feedback/mccabe/radon-cc-feedback-"$date".json
 
-halstead_complexity code_quality_experiments/radon-feedback/halstead/radon-halstead-feedback-"$date".json
+halstead_complexity code_quality_experiments/radon-feedback/halstead/radon-hal-feedback-"$date".json
 
 mi_complexity code_quality_experiments/radon-feedback/mi/radon-mi-feedback-"$date".json
