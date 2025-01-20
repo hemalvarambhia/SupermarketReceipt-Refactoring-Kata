@@ -53,7 +53,4 @@ class ShoppingCart:
                     receipt.add_discount(discount)
 
     def __five_for_amount_discount(self, offer, p, quantity, unit_price):
-        number_of_x = math.floor(int(quantity) / 5)
-        discount_total = unit_price * quantity - (
-                offer.argument * number_of_x + int(quantity) % 5 * unit_price)
-        return Discount(p, str(5) + " for " + str(offer.argument), -discount_total)
+        return offer.five_for_amount_discount(quantity, unit_price)
