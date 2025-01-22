@@ -8,3 +8,5 @@ out/
 build/
 .gradle/
 .DS_Store
+ruby/tmp
+
