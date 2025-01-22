@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 
 group :test do
   gem 'minitest'
-  gem 'simplecov'
   gem 'mutant-minitest'
+  gem 'simplecov'
 end
 
 group :development do
-  gem 'rake'
   gem 'guard'
   gem 'guard-rake'
+  gem 'rake'
   gem 'rubocop'
 end

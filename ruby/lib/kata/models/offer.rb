@@ -1,5 +1,4 @@
 class Kata::Offer
-
   attr_reader :product, :offer_type, :argument
 
   def initialize(offer_type, product, argument)
@@ -7,5 +6,4 @@ class Kata::Offer
     @argument = argument
     @product = product
   end
-
 end

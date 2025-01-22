@@ -1,5 +1,4 @@
 class Kata::Discount
-
   attr_reader :product, :description, :discount_amount
 
   def initialize(product, description, discount_amount)
@@ -7,5 +6,4 @@ class Kata::Discount
     @description = description
     @discount_amount = discount_amount
   end
-
 end

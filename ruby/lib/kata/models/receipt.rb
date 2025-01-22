@@ -1,5 +1,4 @@
 class Kata::Receipt
-
   def initialize
     @items = []
     @discounts = []
@@ -33,5 +32,4 @@ class Kata::Receipt
   def discounts
     Array.new @discounts
   end
-
 end

@@ -1,5 +1,4 @@
 class Kata::Teller
-
   def initialize(catalog)
     @catalog = catalog
     @offers = {}
@@ -23,5 +22,4 @@ class Kata::Teller
 
     receipt
   end
-
 end

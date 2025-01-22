@@ -1,5 +1,4 @@
 class FakeCatalog < Kata::SupermarketCatalog
-
   def initialize
     @products = {}
     @prices = {}
@@ -13,5 +12,4 @@ class FakeCatalog < Kata::SupermarketCatalog
   def unit_price(p)
     @prices.fetch(p.name)
   end
-
 end

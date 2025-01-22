@@ -17,9 +17,9 @@ module Approvals
   def approval_filename
     File.join(
       File.dirname(__FILE__),
-      "..",
-      "approvals",
-      "#{self.class.name}.#{self.name}.approved.txt",
+      '..',
+      'approvals',
+      "#{self.class.name}.#{name}.approved.txt"
     )
   end
 end
