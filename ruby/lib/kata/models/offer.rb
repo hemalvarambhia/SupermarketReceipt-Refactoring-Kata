@@ -11,7 +11,7 @@ class Kata::Offer
     if @offer_type == Kata::SpecialOfferType::TWO_FOR_AMOUNT && quantity.to_i >= 2
       total = @argument * (quantity.to_i / 2) + quantity.to_i % 2 * unit_price
       discount_amount = unit_price * quantity - total
-      return Kata::Discount.new(@product, '2 for ' + @argument.to_s, discount_amount)
+      return Kata::Discount.new(@product, "2 for #{@argument}", discount_amount)
     end
 
     if @offer_type == Kata::SpecialOfferType::THREE_FOR_TWO && quantity.to_i > 2
@@ -22,7 +22,7 @@ class Kata::Offer
     end
 
     if @offer_type == Kata::SpecialOfferType::TEN_PERCENT_DISCOUNT
-      return Kata::Discount.new(product, @argument.to_s + '% off',
+      return Kata::Discount.new(product, "#{@argument}% off",
                                     quantity * unit_price * @argument / 100.0)
     end
 
@@ -30,7 +30,7 @@ class Kata::Offer
       number_of_x = quantity.to_i / 5
       total = (@argument * number_of_x + quantity.to_i % 5 * unit_price)
       discount_total = unit_price * quantity - total
-      Kata::Discount.new(@product, 5.to_s + ' for ' + @argument.to_s, discount_total)
+      Kata::Discount.new(@product, "5 for #{@argument}", discount_total)
     end
   end
 end
