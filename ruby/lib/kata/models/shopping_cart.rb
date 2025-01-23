@@ -33,10 +33,6 @@ class Kata::ShoppingCart
 
       discount = offer.calculate_discount(unit_price, quantity)
 
-      if offer.offer_type == Kata::SpecialOfferType::TEN_PERCENT_DISCOUNT
-        discount = Kata::Discount.new(product, offer.argument.to_s + '% off',
-                                      quantity * unit_price * offer.argument / 100.0)
-      end
       if offer.offer_type == Kata::SpecialOfferType::FIVE_FOR_AMOUNT && quantity.to_i >= 5
         number_of_x = quantity.to_i / 5
         total = (offer.argument * number_of_x + quantity.to_i % 5 * unit_price)
