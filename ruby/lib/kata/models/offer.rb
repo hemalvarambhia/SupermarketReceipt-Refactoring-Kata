@@ -8,15 +8,15 @@ class Kata::Offer
   end
 
   def calculate_discount(unit_price, quantity)
-    if @offer_type == Kata::SpecialOfferType::TWO_FOR_AMOUNT && quantity.to_i >= 2
-      total = @argument * (quantity.to_i / 2) + quantity.to_i % 2 * unit_price
+    if @offer_type == Kata::SpecialOfferType::TWO_FOR_AMOUNT && quantity >= 2
+      total = @argument * (quantity / 2) + quantity % 2 * unit_price
       discount_amount = unit_price * quantity - total
       return Kata::Discount.new(@product, "2 for #{@argument}", discount_amount)
     end
 
-    if @offer_type == Kata::SpecialOfferType::THREE_FOR_TWO && quantity.to_i > 2
-      number_of_x = quantity.to_i / 3
-      total = ((number_of_x * 2 * unit_price) + quantity.to_i % 3 * unit_price)
+    if @offer_type == Kata::SpecialOfferType::THREE_FOR_TWO && quantity > 2
+      number_of_x = quantity / 3
+      total = ((number_of_x * 2 * unit_price) + quantity % 3 * unit_price)
       discount_amount = quantity * unit_price - total
       return Kata::Discount.new(@product, '3 for 2', discount_amount)
     end
@@ -26,9 +26,9 @@ class Kata::Offer
                                     quantity * unit_price * @argument / 100.0)
     end
 
-    if @offer_type == Kata::SpecialOfferType::FIVE_FOR_AMOUNT && quantity.to_i >= 5
-      number_of_x = quantity.to_i / 5
-      total = (@argument * number_of_x + quantity.to_i % 5 * unit_price)
+    if @offer_type == Kata::SpecialOfferType::FIVE_FOR_AMOUNT && quantity >= 5
+      number_of_x = quantity / 5
+      total = (@argument * number_of_x + quantity % 5 * unit_price)
       discount_total = unit_price * quantity - total
       Kata::Discount.new(@product, "5 for #{@argument}", discount_total)
     end
