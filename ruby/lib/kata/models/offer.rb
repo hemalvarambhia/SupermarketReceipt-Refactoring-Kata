@@ -9,9 +9,7 @@ class Kata::Offer
 
   def calculate_discount(unit_price, quantity)
     if qualifies_for_two_for_amount?(quantity)
-      total = @argument * (quantity / 2) + quantity % 2 * unit_price
-      discount_amount = unit_price * quantity - total
-      return Kata::Discount.new(@product, "2 for #{@argument}", discount_amount)
+      return two_for_amount_discount(unit_price, quantity)
     end
 
     if qualifies_for_three_for_two?(quantity)
@@ -34,6 +32,12 @@ class Kata::Offer
   end
 
   private
+
+  def two_for_amount_discount(unit_price, quantity)
+    total = @argument * (quantity / 2) + quantity % 2 * unit_price
+    discount_amount = unit_price * quantity - total
+    return Kata::Discount.new(@product, "2 for #{@argument}", discount_amount)
+  end
 
   def qualifies_for_five_for_amount?(quantity)
     @offer_type == Kata::SpecialOfferType::FIVE_FOR_AMOUNT && quantity >= 5
