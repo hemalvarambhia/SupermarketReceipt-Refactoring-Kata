@@ -22,8 +22,15 @@ class Kata::Offer
     end
 
     if @offer_type == Kata::SpecialOfferType::TEN_PERCENT_DISCOUNT
-      Kata::Discount.new(product, @argument.to_s + '% off',
+      return Kata::Discount.new(product, @argument.to_s + '% off',
                                     quantity * unit_price * @argument / 100.0)
+    end
+
+    if @offer_type == Kata::SpecialOfferType::FIVE_FOR_AMOUNT && quantity.to_i >= 5
+      number_of_x = quantity.to_i / 5
+      total = (@argument * number_of_x + quantity.to_i % 5 * unit_price)
+      discount_total = unit_price * quantity - total
+      Kata::Discount.new(@product, 5.to_s + ' for ' + @argument.to_s, discount_total)
     end
   end
 end
