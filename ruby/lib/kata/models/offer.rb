@@ -13,10 +13,7 @@ class Kata::Offer
     end
 
     if qualifies_for_three_for_two?(quantity)
-      number_of_x = quantity / 3
-      total = ((number_of_x * 2 * unit_price) + quantity % 3 * unit_price)
-      discount_amount = quantity * unit_price - total
-      return Kata::Discount.new(@product, '3 for 2', discount_amount)
+      return three_for_two_discount(unit_price, quantity)
     end
 
     if qualifies_for_ten_percent_discount?
@@ -32,6 +29,13 @@ class Kata::Offer
   end
 
   private
+
+  def three_for_two_discount(unit_price, quantity)
+    number_of_x = quantity / 3
+    total = ((number_of_x * 2 * unit_price) + quantity % 3 * unit_price)
+    discount_amount = quantity * unit_price - total
+    return Kata::Discount.new(@product, '3 for 2', discount_amount)
+  end
 
   def two_for_amount_discount(unit_price, quantity)
     total = @argument * (quantity / 2) + quantity % 2 * unit_price
