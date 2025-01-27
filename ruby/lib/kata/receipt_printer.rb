@@ -12,9 +12,9 @@ class Kata::ReceiptPrinter
       unit_price = '%.2f' % item.price
 
       whitespace_size = @columns - name.size - price.size
-      line = name + self.class.whitespace(whitespace_size) + price + "\n"
+      line = "#{name}#{self.class.whitespace(whitespace_size)}#{price}\n"
 
-      line += '  ' + unit_price + ' * ' + quantity + "\n" if item.quantity != 1
+      line += "  #{unit_price} * #{quantity}\n" if item.quantity != 1
 
       result.concat(line)
     end
