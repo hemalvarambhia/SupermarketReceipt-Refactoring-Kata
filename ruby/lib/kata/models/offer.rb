@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Kata
   # A class that encapsulates the offers available on products and computes the discount.
   class Offer
