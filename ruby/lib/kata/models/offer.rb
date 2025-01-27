@@ -16,22 +16,9 @@ class Kata::Offer
     }
     offer = available_offers[@offer_type]
     if offer.qualifies?(@offer_type, quantity)
-      return offer.discount(unit_price, quantity)
-    end
-
-    offer = available_offers[@offer_type]
-    if offer.qualifies?(@offer_type, quantity)
-      return offer.discount(unit_price, quantity)
-    end
-
-    offer = available_offers[@offer_type]
-    if offer.qualifies?(@offer_type, nil)
-      return offer.discount(unit_price, quantity)
-    end
-
-    offer = available_offers[@offer_type]
-    if offer.qualifies?(@offer_type, quantity)
       offer.discount(unit_price, quantity)
+    else
+      nil
     end
   end
 end
