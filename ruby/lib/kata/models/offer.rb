@@ -20,7 +20,7 @@ class Kata::Offer
       return ten_percent_discount(unit_price, quantity)
     end
 
-    five_for_amount = FiveForAmountOffer.new(product: @product, argument: @argument)
+    five_for_amount = Kata::FiveForAmountOffer.new(product: @product, argument: @argument)
     if five_for_amount.qualifies?(@offer_type, quantity)
       five_for_amount.discount(unit_price, quantity)
     end
@@ -33,10 +33,7 @@ class Kata::Offer
   end
 
   def three_for_two_discount(unit_price, quantity)
-    number_of_x = quantity / 3
-    total = ((number_of_x * 2 * unit_price) + quantity % 3 * unit_price)
-    discount_amount = quantity * unit_price - total
-    Kata::Discount.new(@product, '3 for 2', discount_amount)
+    Kata::ThreeForTwoOffer.new(product: @product).discount(unit_price, quantity)
   end
 
   def two_for_amount_discount(unit_price, quantity)
