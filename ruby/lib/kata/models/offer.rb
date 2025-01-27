@@ -34,9 +34,7 @@ class Kata::Offer
   end
 
   def two_for_amount_discount(unit_price, quantity)
-    total = @argument * (quantity / 2) + quantity % 2 * unit_price
-    discount_amount = unit_price * quantity - total
-    Kata::Discount.new(@product, "2 for #{@argument}", discount_amount)
+    Kata::TwoForAmountOffer.new(product: @product, argument: @argument).discount(unit_price, quantity)
   end
 
   def qualifies_for_ten_percent_discount?
@@ -44,6 +42,6 @@ class Kata::Offer
   end
 
   def qualifies_for_two_for_amount?(quantity)
-    @offer_type == Kata::SpecialOfferType::TWO_FOR_AMOUNT && quantity >= 2
+    Kata::TwoForAmountOffer.new(product: @product, argument: @argument).qualifies?(@offer_type, quantity)
   end
 end
