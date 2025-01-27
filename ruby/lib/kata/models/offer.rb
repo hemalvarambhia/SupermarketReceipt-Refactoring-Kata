@@ -1,8 +1,6 @@
 module Kata
   # A class that encapsulates the offers available on products and computes the discount.
   class Offer
-    attr_reader :product, :offer_type, :argument
-
     def initialize(offer_type, product, argument)
       available_offers = {
         Kata::SpecialOfferType::TWO_FOR_AMOUNT => Kata::TwoForAmountOffer.new(product: product, argument: argument),
