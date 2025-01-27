@@ -14,8 +14,8 @@ class Kata::Offer
 
   def calculate_discount(unit_price, quantity)
     offer = @available_offers[@offer_type]
-    if offer.qualifies?(@offer_type, quantity)
-      offer.discount(unit_price, quantity)
-    end
+    return nil unless offer.qualifies?(@offer_type, quantity)
+
+    offer.discount(unit_price, quantity)
   end
 end
