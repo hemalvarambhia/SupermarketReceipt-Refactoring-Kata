@@ -10,7 +10,7 @@ class Kata::Offer
       Kata::SpecialOfferType::TEN_PERCENT_DISCOUNT =>
         Kata::TenPercentDiscountOffer.new(product: product, argument: argument)
     }
-    @offer = @available_offers[@offer_type]
+    @offer = @available_offers[offer_type]
   end
 
   def calculate_discount(unit_price, quantity)
