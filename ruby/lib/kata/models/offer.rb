@@ -8,6 +8,12 @@ class Kata::Offer
   end
 
   def calculate_discount(unit_price, quantity)
+    available_offers = {
+      Kata::SpecialOfferType::TWO_FOR_AMOUNT => Kata::TwoForAmountOffer.new(product: @product, argument: @argument),
+      Kata::SpecialOfferType::FIVE_FOR_AMOUNT => Kata::FiveForAmountOffer.new(product: @product, argument: @argument),
+      Kata::SpecialOfferType::THREE_FOR_TWO => Kata::ThreeForTwoOffer.new(product: @product),
+      Kata::SpecialOfferType::TEN_PERCENT_DISCOUNT => Kata::TenPercentDiscountOffer.new(product: @product, argument: @argument)
+    }
     two_for_amount = Kata::TwoForAmountOffer.new(product: @product, argument: @argument)
     if two_for_amount.qualifies?(@offer_type, quantity)
       return two_for_amount.discount(unit_price, quantity)
