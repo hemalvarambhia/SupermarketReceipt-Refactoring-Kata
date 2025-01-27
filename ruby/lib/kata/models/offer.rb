@@ -11,7 +11,6 @@ module Kata
         Kata::SpecialOfferType::TEN_PERCENT_DISCOUNT =>
           Kata::TenPercentDiscountOffer.new(product: product, argument: argument)
       }
-      @offer_type = offer_type
       @offer = available_offers[offer_type]
     end
 
