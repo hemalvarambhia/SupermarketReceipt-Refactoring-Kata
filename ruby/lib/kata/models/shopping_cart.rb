@@ -8,6 +8,10 @@ module Kata
       @product_quantities = {}
     end
 
+    def each_item(&block)
+      items.each(&block)
+    end
+
     def items
       Array.new @items
     end

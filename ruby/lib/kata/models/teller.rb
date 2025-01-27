@@ -10,8 +10,7 @@ class Kata::Teller
 
   def checks_out_articles_from(the_cart)
     receipt = Kata::Receipt.new
-    product_quantities = the_cart.items
-    product_quantities.each { |product_quantity| add(product_quantity, receipt) }
+    the_cart.each_item { |product_quantity| add(product_quantity, receipt) }
     the_cart.handle_offers(receipt, @offers, @catalog)
 
     receipt
