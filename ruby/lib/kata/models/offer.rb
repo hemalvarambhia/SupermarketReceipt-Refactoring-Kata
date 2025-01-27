@@ -47,7 +47,7 @@ class Kata::Offer
   end
 
   def qualifies_for_three_for_two?(quantity)
-    @offer_type == Kata::SpecialOfferType::THREE_FOR_TWO && quantity > 2
+    Kata::ThreeForTwoOffer.new(product: @product).qualifies?(@offer_type, quantity)
   end
 
   def qualifies_for_two_for_amount?(quantity)

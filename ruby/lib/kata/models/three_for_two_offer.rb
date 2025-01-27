@@ -6,6 +6,10 @@ module Kata
       @product = product
     end
 
+    def qualifies?(type, quantity)
+      type == Kata::SpecialOfferType::THREE_FOR_TWO && quantity > 2
+    end
+
     def discount(unit_price, quantity)
       number_of_x = quantity / 3
       total = ((number_of_x * 2 * unit_price) + quantity % 3 * unit_price)
