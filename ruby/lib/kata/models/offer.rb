@@ -14,24 +14,24 @@ class Kata::Offer
       Kata::SpecialOfferType::THREE_FOR_TWO => Kata::ThreeForTwoOffer.new(product: @product),
       Kata::SpecialOfferType::TEN_PERCENT_DISCOUNT => Kata::TenPercentDiscountOffer.new(product: @product, argument: @argument)
     }
-    two_for_amount = available_offers[@offer_type]
-    if two_for_amount.qualifies?(@offer_type, quantity)
-      return two_for_amount.discount(unit_price, quantity)
+    offer = available_offers[@offer_type]
+    if offer.qualifies?(@offer_type, quantity)
+      return offer.discount(unit_price, quantity)
     end
 
-    three_for_two_offer = available_offers[@offer_type]
-    if three_for_two_offer.qualifies?(@offer_type, quantity)
-      return three_for_two_offer.discount(unit_price, quantity)
+    offer = available_offers[@offer_type]
+    if offer.qualifies?(@offer_type, quantity)
+      return offer.discount(unit_price, quantity)
     end
 
-    ten_percent_discount_offer = available_offers[@offer_type]
-    if ten_percent_discount_offer.qualifies?(@offer_type, nil)
-      return ten_percent_discount_offer.discount(unit_price, quantity)
+    offer = available_offers[@offer_type]
+    if offer.qualifies?(@offer_type, nil)
+      return offer.discount(unit_price, quantity)
     end
 
-    five_for_amount = available_offers[@offer_type]
-    if five_for_amount.qualifies?(@offer_type, quantity)
-      five_for_amount.discount(unit_price, quantity)
+    offer = available_offers[@offer_type]
+    if offer.qualifies?(@offer_type, quantity)
+      offer.discount(unit_price, quantity)
     end
   end
 end
