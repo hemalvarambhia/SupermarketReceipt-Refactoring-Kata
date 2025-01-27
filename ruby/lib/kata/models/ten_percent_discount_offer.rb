@@ -8,8 +8,8 @@ module Kata
       @argument = argument
     end
 
-    def qualifies?(type, _quantity)
-      type == Kata::SpecialOfferType::TEN_PERCENT_DISCOUNT
+    def qualifies?(_quantity)
+      true
     end
 
     def discount(unit_price, quantity)

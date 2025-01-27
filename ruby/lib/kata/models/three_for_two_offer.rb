@@ -7,8 +7,8 @@ module Kata
       @product = product
     end
 
-    def qualifies?(type, quantity)
-      type == Kata::SpecialOfferType::THREE_FOR_TWO && quantity > 2
+    def qualifies?(quantity)
+      quantity > 2
     end
 
     def discount(unit_price, quantity)

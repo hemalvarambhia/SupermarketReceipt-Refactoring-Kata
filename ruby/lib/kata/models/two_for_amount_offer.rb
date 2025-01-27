@@ -8,8 +8,8 @@ module Kata
       @argument = argument
     end
 
-    def qualifies?(type, quantity)
-      type == Kata::SpecialOfferType::TWO_FOR_AMOUNT && quantity >= 2
+    def qualifies?(quantity)
+      quantity >= 2
     end
 
     def discount(unit_price, quantity)
