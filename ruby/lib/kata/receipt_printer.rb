@@ -5,7 +5,7 @@ class Kata::ReceiptPrinter
 
   def print_receipt(receipt)
     result = ''
-    for item in receipt.items do
+    receipt.items.each do |item|
       price = '%.2f' % item.total_price
       quantity = self.class.present_quantity(item)
       name = item.product.name
