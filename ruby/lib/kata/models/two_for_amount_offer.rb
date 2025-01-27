@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Kata
+  # Represents 2 for the price of n offer
   class TwoForAmountOffer
     def initialize(product:, argument:)
       @product = product

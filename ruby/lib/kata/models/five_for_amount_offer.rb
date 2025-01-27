@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Kata
-
+  # Models a 5 for the price of n offer.
   class FiveForAmountOffer
     def initialize(product:, argument:)
       @product = product
@@ -10,7 +10,6 @@ module Kata
     def qualifies?(type, quantity)
       type == Kata::SpecialOfferType::FIVE_FOR_AMOUNT && quantity >= 5
     end
-
 
     def discount(unit_price, quantity)
       number_of_x = quantity / 5

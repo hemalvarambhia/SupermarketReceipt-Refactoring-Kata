@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Kata
+  # Models a three for two offer.
   class ThreeForTwoOffer
     def initialize(product:)
       @product = product
