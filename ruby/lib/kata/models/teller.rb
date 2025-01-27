@@ -25,8 +25,8 @@ module Kata
       product = product_quantity.product
       quantity = product_quantity.quantity
       unit_price = @catalog.unit_price(product)
-      price = quantity * unit_price
-      receipt.add_product(product, quantity, unit_price, price)
+      total_price = quantity * unit_price
+      receipt.add_product(product, quantity, unit_price, total_price)
     end
   end
 end
