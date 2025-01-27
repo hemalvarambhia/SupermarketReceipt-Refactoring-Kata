@@ -3,8 +3,6 @@ class Kata::Offer
 
   def initialize(offer_type, product, argument)
     @offer_type = offer_type
-    @argument = argument
-    @product = product
     @available_offers = {
       Kata::SpecialOfferType::TWO_FOR_AMOUNT => Kata::TwoForAmountOffer.new(product: product, argument: argument),
       Kata::SpecialOfferType::FIVE_FOR_AMOUNT => Kata::FiveForAmountOffer.new(product: product, argument: argument),
