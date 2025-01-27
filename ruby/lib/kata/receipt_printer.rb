@@ -15,7 +15,7 @@ class Kata::ReceiptPrinter
 
       result.concat(line)
     end
-    for discount in receipt.discounts do
+    receipt.discounts.each do |discount|
       product_presentation = discount.product.name
       price_presentation = '%.2f' % discount.discount_amount
       description = discount.description
