@@ -31,11 +31,11 @@ class Kata::Offer
   private
 
   def ten_percent_discount(unit_price, quantity)
-    Kata::Discount.new(@product, "#{@argument}% off", quantity * unit_price * @argument / 100.0)
+    Kata::TenPercentDiscountOffer.new(product: @product, argument: @argument).discount(unit_price, quantity)
   end
 
-  def qualifies_for_ten_percent_discount?
-    @offer_type == Kata::SpecialOfferType::TEN_PERCENT_DISCOUNT
+  def qualifies_for_ten_percent_discount?(quantity = nil)
+    Kata::TenPercentDiscountOffer.new(product: @product, argument: @argument).qualifies?(@offer_type, quantity)
   end
 
 end
