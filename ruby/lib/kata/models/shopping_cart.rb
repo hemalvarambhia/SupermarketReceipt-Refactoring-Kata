@@ -9,11 +9,7 @@ module Kata
     end
 
     def each_item(&block)
-      items.each(&block)
-    end
-
-    def items
-      Array.new @items
+      Array.new(@items).each(&block)
     end
 
     def add_item(product)
