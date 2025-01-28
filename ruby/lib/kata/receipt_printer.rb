@@ -14,8 +14,7 @@ class Kata::ReceiptPrinter
       result << description
       result << "(#{product_presentation})"
       result << whitespace(@columns - 3 - product_presentation.size - description.size - price_presentation.size)
-      result << '-'
-      result << price_presentation
+      result << "-#{price_presentation}"
       result << "\n"
     end
     result.concat("\n")
