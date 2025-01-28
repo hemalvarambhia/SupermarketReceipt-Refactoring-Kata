@@ -7,9 +7,8 @@ class Kata::ReceiptPrinter
     result = receipt.items.inject('') do |line_item, item|
       line_item << line_item_in_receipt(item)
     end
-    receipt.discounts.each do |discount|
-      result << discount_line_in_receipt(discount)
-      result << "\n"
+    receipt.discounts.inject(result) do |line_item, discount|
+      line_item << "#{discount_line_in_receipt(discount)}\n"
     end
     result.concat("\n")
     price_presentation = format('%.2f', receipt.total_price.to_f)
