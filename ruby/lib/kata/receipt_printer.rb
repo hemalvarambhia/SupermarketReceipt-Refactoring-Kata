@@ -28,10 +28,6 @@ class Kata::ReceiptPrinter
     result.to_s
   end
 
-  def whitespace(whitespace_size)
-    ' ' * whitespace_size
-  end
-
   private
 
   def line_item_in_receipt(item, quantity)
@@ -46,5 +42,10 @@ class Kata::ReceiptPrinter
 
   def present_quantity(item)
     Kata::ProductUnit::EACH == item.product.unit ? format('%x', item.quantity.to_i) : '%.3f' % item.quantity
+  end
+
+
+  def whitespace(whitespace_size)
+    ' ' * whitespace_size
   end
 end
