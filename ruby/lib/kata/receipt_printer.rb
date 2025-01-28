@@ -43,10 +43,12 @@ class Kata::ReceiptPrinter
   private
 
   def receipt_line(item, name, price, quantity, unit_price)
-    whitespace_size = @columns - item.product.name.size - price.size
+    total_price = '%.2f' % item.total_price
+    unit_price_text = '%.2f' % item.price
+    whitespace_size = @columns - item.product.name.size - total_price.size
     whitespace = ' ' * whitespace_size
-    line = "#{item.product.name}#{whitespace}#{price}\n"
-    line += "  #{unit_price} * #{quantity}\n" if item.quantity != 1
+    line = "#{item.product.name}#{whitespace}#{total_price}\n"
+    line += "  #{unit_price_text} * #{quantity}\n" if item.quantity != 1
     line
   end
 end
