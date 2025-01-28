@@ -28,10 +28,6 @@ class Kata::ReceiptPrinter
     result.to_s
   end
 
-  def present_quantity(item)
-    Kata::ProductUnit::EACH == item.product.unit ? format('%x', item.quantity.to_i) : '%.3f' % item.quantity
-  end
-
   def whitespace(whitespace_size)
     ' ' * whitespace_size
   end
@@ -46,5 +42,9 @@ class Kata::ReceiptPrinter
     line = "#{item.product.name}#{whitespace}#{total_price}\n"
     line += "  #{unit_price_text} * #{quantity}\n" if item.quantity != 1
     line
+  end
+
+  def present_quantity(item)
+    Kata::ProductUnit::EACH == item.product.unit ? format('%x', item.quantity.to_i) : '%.3f' % item.quantity
   end
 end
