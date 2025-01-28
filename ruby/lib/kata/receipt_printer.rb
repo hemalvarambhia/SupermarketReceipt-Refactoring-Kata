@@ -20,9 +20,7 @@ class Kata::ReceiptPrinter
       price_presentation = '%.2f' % discount.discount_amount
       description = discount.description
       result << description
-      result << '('
-      result << product_presentation
-      result << ')'
+      result << "(#{product_presentation})"
       result << whitespace(@columns - 3 - product_presentation.size - description.size - price_presentation.size)
       result << '-'
       result << price_presentation
