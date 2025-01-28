@@ -4,8 +4,7 @@ class Kata::ReceiptPrinter
   end
 
   def print_receipt(receipt)
-    result = ''
-    receipt.items.inject(result) do |line_item, item|
+    result = receipt.items.inject('') do |line_item, item|
       line_item << line_item_in_receipt(item)
     end
     receipt.discounts.each do |discount|
