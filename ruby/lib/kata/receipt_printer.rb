@@ -19,11 +19,11 @@ class Kata::ReceiptPrinter
       product_presentation = discount.product.name
       price_presentation = '%.2f' % discount.discount_amount
       description = discount.description
-      result.concat(description)
-      result.concat('(')
-      result.concat(product_presentation)
-      result.concat(')')
-      result.concat(whitespace(@columns - 3 - product_presentation.size - description.size - price_presentation.size))
+      result << description
+      result << '('
+      result << product_presentation
+      result << ')'
+      result << whitespace(@columns - 3 - product_presentation.size - description.size - price_presentation.size)
       result.concat('-')
       result.concat(price_presentation)
       result.concat("\n")
