@@ -6,7 +6,7 @@ class Kata::ReceiptPrinter
   def print_receipt(receipt)
     result = ''
     receipt.items.each do |item|
-      quantity = self.class.present_quantity(item)
+      quantity = present_quantity(item)
       result << line_item_in_receipt(item, quantity)
     end
     receipt.discounts.each do |discount|
@@ -28,7 +28,7 @@ class Kata::ReceiptPrinter
     result.to_s
   end
 
-  def self.present_quantity(item)
+  def present_quantity(item)
     Kata::ProductUnit::EACH == item.product.unit ? format('%x', item.quantity.to_i) : '%.3f' % item.quantity
   end
 
