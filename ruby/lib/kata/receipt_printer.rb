@@ -39,10 +39,6 @@ class Kata::ReceiptPrinter
   private
 
   def line_item_in_receipt(item, quantity)
-    receipt_line(item, nil, nil, quantity, nil)
-  end
-
-  def receipt_line(item, name, price, quantity, unit_price)
     total_price = '%.2f' % item.total_price
     unit_price_text = '%.2f' % item.price
     whitespace_size = @columns - item.product.name.size - total_price.size
