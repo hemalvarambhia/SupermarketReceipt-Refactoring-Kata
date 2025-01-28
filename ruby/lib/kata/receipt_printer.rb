@@ -6,12 +6,8 @@ class Kata::ReceiptPrinter
   def print_receipt(receipt)
     result = ''
     receipt.items.each do |item|
-      price = '%.2f' % item.total_price
       quantity = self.class.present_quantity(item)
-      name = item.product.name
-      unit_price = '%.2f' % item.price
-
-      result << receipt_line(item, name, price, quantity, unit_price)
+      result << line_item_in_receipt(item, quantity)
     end
     receipt.discounts.each do |discount|
       product_presentation = discount.product.name
@@ -41,6 +37,10 @@ class Kata::ReceiptPrinter
   end
 
   private
+
+  def line_item_in_receipt(item, quantity)
+    receipt_line(item, nil, nil, quantity, nil)
+  end
 
   def receipt_line(item, name, price, quantity, unit_price)
     total_price = '%.2f' % item.total_price
