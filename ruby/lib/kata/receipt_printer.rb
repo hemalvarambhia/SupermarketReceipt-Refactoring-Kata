@@ -32,8 +32,8 @@ class Kata::ReceiptPrinter
   end
 
   def line_item_in_receipt(item)
-    total_price = '%.2f' % item.total_price
-    unit_price_text = '%.2f' % item.price
+    total_price = format('%.2f', item.total_price)
+    unit_price_text = format('%.2f', item.price)
     whitespace_size = @columns - item.product.name.size - total_price.size
     whitespace = ' ' * whitespace_size
     quantity = present_quantity(item)
