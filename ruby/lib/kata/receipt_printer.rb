@@ -19,9 +19,8 @@ class Kata::ReceiptPrinter
 
   def total_line_in_receipt(receipt)
     price_presentation = format('%.2f', receipt.total_price.to_f)
-    total = 'Total: '
-    whitespace = ' ' * (@columns - total.size - price_presentation.size)
-    total + whitespace + price_presentation
+    whitespace = ' ' * (@columns - 'Total: '.size - price_presentation.size)
+    "Total: #{whitespace}#{price_presentation}"
   end
 
   def discount_line_in_receipt(discount)
