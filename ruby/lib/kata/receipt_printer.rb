@@ -14,7 +14,8 @@ class Kata::ReceiptPrinter
     price_presentation = format('%.2f', receipt.total_price.to_f)
     total = 'Total: '
     whitespace = ' ' * (@columns - total.size - price_presentation.size)
-    result.concat(total, whitespace, price_presentation)
+    total_line = total + whitespace + price_presentation
+    result << total_line
     result
   end
 
