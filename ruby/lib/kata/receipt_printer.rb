@@ -1,12 +1,11 @@
+# frozen_string_literal: true
 class Kata::ReceiptPrinter
   def initialize(columns = 40)
     @columns = columns
   end
 
   def print_receipt(receipt)
-    result = receipt.items.inject('') do |line_item, item|
-      line_item << line_item_in_receipt(item)
-    end
+    result = receipt.items.map { |item| line_item_in_receipt(item) }.join('')
     receipt.discounts.inject(result) do |line_item, discount|
       line_item << "#{discount_line_in_receipt(discount)}\n"
     end
@@ -25,7 +24,7 @@ class Kata::ReceiptPrinter
 
   def discount_line_in_receipt(discount)
     product_presentation = discount.product.name
-    price_presentation = '%.2f' % discount.discount_amount
+    price_presentation = format('%.2f', discount.discount_amount)
     description = discount.description
     whitespace_size = @columns - 3 - product_presentation.size - description.size - price_presentation.size
     description + "(#{product_presentation})" + whitespace(whitespace_size) + "-#{price_presentation}"
