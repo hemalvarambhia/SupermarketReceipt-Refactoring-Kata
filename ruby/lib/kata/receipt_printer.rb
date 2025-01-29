@@ -11,8 +11,7 @@ class Kata::ReceiptPrinter
       line_item << "#{discount_line_in_receipt(discount)}\n"
     end
     result.concat("\n")
-    total_line = total_line_in_receipt(receipt)
-    result << total_line
+    result << total_line_in_receipt(receipt)
     result
   end
 
