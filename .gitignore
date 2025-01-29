@@ -9,4 +9,8 @@ build/
 .gradle/
 .DS_Store
 ruby/tmp
+.qlty/logs
+.qlty/out
+.qlty/plugin_cachedir
+.qlty/results
 
