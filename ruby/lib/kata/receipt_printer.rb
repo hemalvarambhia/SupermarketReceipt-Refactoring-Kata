@@ -38,7 +38,7 @@ class Kata::ReceiptPrinter
     whitespace = ' ' * whitespace_size
     quantity = present_quantity(item)
     line = "#{item.product.name}#{whitespace}#{total_price}\n"
-    line += "  #{unit_price_text} * #{quantity}\n" if item.quantity != 1
+    line += "  #{unit_price_text} * #{quantity}\n" unless item.quantity == 1
     line
   end
 
