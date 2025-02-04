@@ -20,7 +20,7 @@ module Kata
 
     def total_line_in_receipt(receipt)
       price_presentation = format('%.2f', receipt.total_price.to_f)
-      number_of_spaces = (@columns - 'Total: '.size - price_presentation.size)
+      number_of_spaces = @columns - 'Total: '.size - price_presentation.size
       whitespace = ' ' * number_of_spaces
       "Total: #{whitespace}#{price_presentation}"
     end
