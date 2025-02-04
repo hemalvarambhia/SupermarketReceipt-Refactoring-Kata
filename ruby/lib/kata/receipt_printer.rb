@@ -28,16 +28,16 @@ module Kata
       product_presentation = discount.product.name
       price_presentation = format('%.2f', discount.discount_amount)
       description = discount.description
-      whitespace_size = @columns - 3 - product_presentation.size - description.size - price_presentation.size
-      whitespace = ' ' * whitespace_size
+      number_of_spaces = @columns - 3 - product_presentation.size - description.size - price_presentation.size
+      whitespace = ' ' * number_of_spaces
       description + "(#{product_presentation})" + whitespace + "-#{price_presentation}"
     end
 
     def line_item_in_receipt(item)
       total_price = format('%.2f', item.total_price)
       unit_price_text = format('%.2f', item.price)
-      whitespace_size = @columns - item.product.name.size - total_price.size
-      whitespace = ' ' * whitespace_size
+      number_of_spaces = @columns - item.product.name.size - total_price.size
+      whitespace = ' ' * number_of_spaces
       quantity = present_quantity(item)
       line = "#{item.product.name}#{whitespace}#{total_price}\n"
       line += "  #{unit_price_text} * #{quantity}\n" unless item.quantity == 1
