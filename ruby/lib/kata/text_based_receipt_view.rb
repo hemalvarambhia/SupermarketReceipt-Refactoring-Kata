@@ -3,7 +3,6 @@
 module Kata
   # Responsible for rendering a text based form of the receipt content.
   class TextBasedReceiptView
-
     def initialize(columns = 40)
       @columns = columns
     end
