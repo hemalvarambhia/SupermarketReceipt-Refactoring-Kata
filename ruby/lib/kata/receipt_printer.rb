@@ -19,10 +19,7 @@ module Kata
     private
 
     def total_line_in_receipt(receipt)
-      price_presentation = format('%.2f', receipt.total_price.to_f)
-      number_of_spaces = @columns - 'Total: '.size - price_presentation.size
-      whitespace = ' ' * number_of_spaces
-      "Total: #{whitespace}#{price_presentation}"
+      TextBasedReceiptView.new(@columns).total_line_in_receipt(receipt)
     end
 
     def discount_line_in_receipt(discount)
