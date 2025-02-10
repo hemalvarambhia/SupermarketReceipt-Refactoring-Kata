@@ -29,9 +29,5 @@ module Kata
     def line_item_in_receipt(item)
       TextBasedReceiptView.new(@columns).line_item_in_receipt(item)
     end
-
-    def present_quantity(item)
-      item.each? ? format('%x', item.quantity.to_i) : format('%.3f', item.quantity)
-    end
   end
 end
