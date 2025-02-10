@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# 
+
 module Kata
   class ReceiptPrinter
     def initialize(columns = 40)
