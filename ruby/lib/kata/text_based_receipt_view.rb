@@ -35,6 +35,8 @@ module Kata
       line
     end
 
+    private
+
     def present_quantity(item)
       item.each? ? format('%x', item.quantity.to_i) : format('%.3f', item.quantity)
     end
