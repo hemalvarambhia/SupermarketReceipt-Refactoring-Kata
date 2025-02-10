@@ -26,12 +26,7 @@ module Kata
     end
 
     def discount_line_in_receipt(discount)
-      product_name = discount.product.name
-      price_presentation = format('%.2f', discount.discount_amount)
-      description = discount.description
-      number_of_spaces = @columns - 3 - product_name.size - description.size - price_presentation.size
-      whitespace = ' ' * number_of_spaces
-      description + "(#{product_name})" + whitespace + "-#{price_presentation}"
+      TextBasedReceiptView.new(@columns).discount_line_in_receipt(discount)
     end
 
     def line_item_in_receipt(item)
