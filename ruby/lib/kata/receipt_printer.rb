@@ -27,14 +27,7 @@ module Kata
     end
 
     def line_item_in_receipt(item)
-      total_price = format('%.2f', item.total_price)
-      unit_price_text = format('%.2f', item.price)
-      number_of_spaces = @columns - item.product.name.size - total_price.size
-      whitespace = ' ' * number_of_spaces
-      quantity = present_quantity(item)
-      line = "#{item.product.name}#{whitespace}#{total_price}\n"
-      line += "  #{unit_price_text} * #{quantity}\n" unless item.quantity == 1
-      line
+      TextBasedReceiptView.new(@columns).line_item_in_receipt(item)
     end
 
     def present_quantity(item)
