@@ -6,11 +6,15 @@ class DiscountedBundlesTest < Minitest::Test
     skip 'TODO'
   end
 
-  def test_does_not_qualify_for_discount_bundle_when_one_product_of_bundle_purchased
+  def test_does_not_qualify_for_discounted_bundle_when_one_product_of_bundle_purchased
     skip 'TODO'
   end
 
-  def test_does_not_qualify_for_discount_bundle_when_no_product_of_bundle_purchase
+  def test_does_not_qualify_for_discounted_bundle_when_no_product_of_bundle_purchased
+    skip 'TODO'
+  end
+
+  def test_does_not_qualify_for_discounted_bundle_when_some_but_not_all_products_of_bundle_purchased
     skip 'TODO'
   end
 end
