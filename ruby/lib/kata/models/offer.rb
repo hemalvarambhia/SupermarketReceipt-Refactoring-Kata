@@ -15,11 +15,7 @@ module Kata
     end
 
     def calculate_discount(unit_price, quantity)
-      offer_qualified_for = if @offer.qualifies?(quantity)
-                              @offer
-                            else
-                              NoOffer.new
-                            end
+      offer_qualified_for = @offer.qualifies?(quantity) ? @offer : NoOffer.new
 
       offer_qualified_for.discount(unit_price, quantity)
     end
