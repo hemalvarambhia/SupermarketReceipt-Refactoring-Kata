@@ -38,12 +38,6 @@ class Offer:
 
 
     def __applicable_offer(self, quantity):
-        offers = [
-            TwoForAmount(self.product, self.argument),
-            ThreeForTwo(self.product, self.argument),
-            FiveForAmount(self.product, self.argument),
-            TenPercentDiscount(self.product, self.argument)
-        ]
         available_offers = {
             SpecialOfferType.TWO_FOR_AMOUNT: TwoForAmount(self.product, self.argument),
             SpecialOfferType.THREE_FOR_TWO: ThreeForTwo(self.product, self.argument),
