@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 require_relative './test_helper'
-
+# Tests that document how a discounted bundle works.
 class DiscountedBundlesTest < Minitest::Test
   def test_qualifies_for_discount_when_all_products_of_bundle_purchased
     skip 'TODO'
