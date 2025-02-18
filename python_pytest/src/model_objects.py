@@ -44,6 +44,12 @@ class Offer:
             FiveForAmount(self.product, self.argument),
             TenPercentDiscount(self.product, self.argument)
         ]
+        available_offers = {
+            SpecialOfferType.TWO_FOR_AMOUNT: TwoForAmount(self.product, self.argument),
+            SpecialOfferType.THREE_FOR_TWO: ThreeForTwo(self.product, self.argument),
+            SpecialOfferType.FIVE_FOR_AMOUNT: FiveForAmount(self.product, self.argument),
+            SpecialOfferType.TEN_PERCENT_DISCOUNT: TenPercentDiscount(self.product, self.argument)
+        }
 
         return next(filter(lambda offer: offer.qualifies(self.offer_type, quantity), offers), NoOffer())
 
