@@ -51,7 +51,7 @@ class TwoForAmount:
         self.product = product
         self.argument = argument
 
-    def qualifies(self, quantity, offer_type=None):
+    def qualifies(self, quantity):
         return int(quantity) >= 2
 
     def discount(self, quantity, unit_price):
@@ -80,7 +80,7 @@ class FiveForAmount:
         self.product = product
         self.argument = argument
 
-    def qualifies(self, quantity, offer_type=None):
+    def qualifies(self, quantity):
         return int(quantity) >= 5
 
     def discount(self, quantity, unit_price):
@@ -95,7 +95,7 @@ class TenPercentDiscount:
         self.product = product
         self.argument = argument
 
-    def qualifies(self, quantity, offer_type=None):
+    def qualifies(self, quantity):
         return True
 
     def discount(self, quantity, unit_price):
