@@ -11,7 +11,7 @@ class DiscountedBundlesTest < Minitest::Test
     ]
     qualifies_for_discount = DiscountedBundleOffer.new(bundle: bundle_of_products).qualifies?(products_purchased)
 
-    assert_equal(true,qualifies_for_discount)
+    assert_equal(true, qualifies_for_discount)
   end
 
   def test_does_not_qualify_for_discounted_bundle_when_incomplete_bundle_purchased
