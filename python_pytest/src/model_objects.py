@@ -44,14 +44,14 @@ class Offer:
             SpecialOfferType.FIVE_FOR_AMOUNT: FiveForAmount(self.product, self.argument),
             SpecialOfferType.TEN_PERCENT_DISCOUNT: TenPercentDiscount(self.product, self.argument)
         }
-        return available_offers[self.offer_type] if available_offers[self.offer_type].qualifies(self.offer_type, quantity) else NoOffer()
+        return available_offers[self.offer_type] if available_offers[self.offer_type].qualifies(quantity) else NoOffer()
 
 class TwoForAmount:
     def __init__(self, product, argument):
         self.product = product
         self.argument = argument
 
-    def qualifies(self, offer_type, quantity):
+    def qualifies(self, quantity, offer_type=None):
         return int(quantity) >= 2
 
     def discount(self, quantity, unit_price):
@@ -65,7 +65,7 @@ class ThreeForTwo:
         self.product = product
         self.argument = argument
 
-    def qualifies(self, offer_type, quantity):
+    def qualifies(self, quantity, offer_type=None):
         return int(quantity) > 2
 
     def discount(self, quantity, unit_price):
@@ -80,7 +80,7 @@ class FiveForAmount:
         self.product = product
         self.argument = argument
 
-    def qualifies(self, offer_type, quantity):
+    def qualifies(self, quantity, offer_type=None):
         return int(quantity) >= 5
 
     def discount(self, quantity, unit_price):
@@ -95,7 +95,7 @@ class TenPercentDiscount:
         self.product = product
         self.argument = argument
 
-    def qualifies(self, offer_type, quantity):
+    def qualifies(self, quantity, offer_type=None):
         return True
 
     def discount(self, quantity, unit_price):
@@ -103,7 +103,7 @@ class TenPercentDiscount:
                             -quantity * unit_price * self.argument / 100.0)
 
 class NoOffer:
-    def discount(self, quantity, unit_price):
+    def discount(self, quantity: None, unit_price):
         return None
 
 class Discount:
