@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Kata
   # Models a 5 for the price of n offer.
   class FiveForAmountOffer
