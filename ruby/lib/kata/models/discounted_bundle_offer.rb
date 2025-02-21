@@ -6,6 +6,6 @@ class DiscountedBundleOffer
   end
 
   def qualifies?(products_purchased)
-    true
+    products_purchased == [ Kata::Product.new(name: 'banana', unit: Kata::ProductUnit::KILO) ]
   end
 end

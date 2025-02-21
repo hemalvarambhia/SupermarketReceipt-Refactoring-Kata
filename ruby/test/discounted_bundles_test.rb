@@ -13,7 +13,14 @@ class DiscountedBundlesTest < Minitest::Test
   end
 
   def test_does_not_qualify_for_discounted_bundle_when_incomplete_bundle_purchased
-    skip 'TODO'
+    bundle_of_products = [ Kata::Product.new(name: 'banana', unit: Kata::ProductUnit::KILO) ]
+    products_purchased = [ Kata::Product.new(name: 'blueberries', unit: Kata::ProductUnit::KILO) ]
+
+    discounted_bundle_offer = DiscountedBundleOffer.new(bundle: bundle_of_products)
+
+    qualifies_for_discount = discounted_bundle_offer.qualifies?(products_purchased)
+
+    assert_equal(false, qualifies_for_discount)
   end
 
   def test_does_not_qualify_for_discounted_bundle_when_bundle_not_purchased
