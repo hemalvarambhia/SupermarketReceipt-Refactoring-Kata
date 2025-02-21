@@ -2,10 +2,10 @@
 
 class DiscountedBundleOffer
   def initialize(bundle:)
-
+    @bundle = bundle
   end
 
   def qualifies?(products_purchased)
-    products_purchased == [ Kata::Product.new(name: 'banana', unit: Kata::ProductUnit::KILO) ]
+    products_purchased == @bundle
   end
 end
