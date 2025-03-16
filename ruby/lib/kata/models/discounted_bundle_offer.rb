@@ -6,6 +6,6 @@ class DiscountedBundleOffer
   end
 
   def qualifies?(products_purchased)
-    products_purchased == @bundle
+    @bundle.all? { |item| products_purchased.include?(item) }
   end
 end
