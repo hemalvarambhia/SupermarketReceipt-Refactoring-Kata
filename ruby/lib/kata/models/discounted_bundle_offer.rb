@@ -2,10 +2,10 @@
 
 class DiscountedBundleOffer
   def initialize(bundle:)
-    @bundle = bundle
+    @product_bundle = bundle
   end
 
   def qualifies?(products_purchased)
-    @bundle.all? { |item| products_purchased.include?(item) }
+    @product_bundle.all? { |item| products_purchased.include?(item) }
   end
 end
