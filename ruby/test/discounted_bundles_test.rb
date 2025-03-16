@@ -86,4 +86,8 @@ class DiscountedBundlesTest < Minitest::Test
 
     assert_equal(true, qualifies_for_discount)
   end
+
+  def test_distills_bundle_from_products_purchased
+    skip 'TODO - if bundle is 1, 2 and products purchased is 1, 3, 4 and 2, 1 and 2 are returned.'
+  end
 end
