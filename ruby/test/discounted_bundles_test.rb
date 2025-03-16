@@ -78,8 +78,8 @@ class DiscountedBundlesTest < Minitest::Test
     products_purchased = [
       Kata::Product.new(name: 'orange juice', unit: Kata::ProductUnit::EACH),
       Kata::Product.new(name: 'orange', unit: Kata::ProductUnit::KILO),
-      Kata::Product.new(name: 'orange', unit: Kata::ProductUnit::KILO),
       Kata::Product.new(name: 'orange juice', unit: Kata::ProductUnit::EACH),
+      Kata::Product.new(name: 'orange', unit: Kata::ProductUnit::KILO),
       Kata::Product.new(name: 'blueberries', unit: Kata::ProductUnit::KILO)
     ]
     qualifies_for_discount = discounted_bundle_offer.qualifies?(products_purchased)
