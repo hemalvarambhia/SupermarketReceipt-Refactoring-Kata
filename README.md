@@ -40,3 +40,9 @@ Those tests have reasonably good coverage and should support most kinds of refac
 ## Use this exercise in a Learning Hour
 
 You can use the [Supermarket Receipt](https://sammancoaching.org/kata_descriptions/supermarket_receipt.html) Kata in learning hours if you are using the [Samman](https://sammancoaching.org) coaching method.
+
+## Running Qlty
+
+In the repository root, run any of the following commands `qlty check path/to/file` e.g for ruby
+
+`qlty check ruby/lib/kata/models`
