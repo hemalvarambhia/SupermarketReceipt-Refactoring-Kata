@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class DiscountedBundleOffer
+class DiscountedBundle
   def initialize(bundle:)
     @product_bundle = bundle
   end
