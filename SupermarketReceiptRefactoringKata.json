@@ -1,0 +1,109 @@
+{
+  "_items": [
+    {
+      "name": "SHOPPING CART",
+      "_responsibilities": [
+        "knows all the products shopper purchased",
+        "knows how to add a product to itself",
+        "knows how to add a quantity of a product to itself",
+        "given a receipt and catalog, knows how to handle offers"
+      ],
+      "_collaborators": [
+        "CATALOG",
+        "RECEIPT"
+      ],
+      "_posX": 351,
+      "_posY": 133,
+      "_type": "entity",
+      "_uuid": "56af6543-7fd0-17f1-0f74-d87da47f70d3"
+    },
+    {
+      "name": "CATALOG",
+      "_responsibilities": [
+        "knows the prices of products"
+      ],
+      "_collaborators": [],
+      "_posX": 625,
+      "_posY": 27,
+      "_name": "CATALOG",
+      "_uuid": "2e99f26a-24ee-1746-2b92-b4008686ccc2",
+      "_type": "entity"
+    },
+    {
+      "name": "RECEIPT",
+      "_responsibilities": [
+        "knows the receipt items purchased",
+        "can calculate a total price of all receipt items",
+        "can add a receipt item to itself"
+      ],
+      "_collaborators": [
+        "RECEIPT ITEM"
+      ],
+      "_posX": 624,
+      "_posY": 226,
+      "_name": "RECEIPT",
+      "_uuid": "61fdaccd-5f68-fb9a-def7-c82329751f61",
+      "_type": "entity"
+    },
+    {
+      "name": "RECEIPT ITEM",
+      "_responsibilities": [
+        "knows its product",
+        "knows the quantity of product purchased",
+        "knows the price of the product",
+        "knows its total price"
+      ],
+      "_collaborators": [],
+      "_posX": 894,
+      "_posY": 226,
+      "_name": "RECEIPT ITEM",
+      "_uuid": "0836290e-68f1-57b5-2671-ad556942818d",
+      "_type": "entity"
+    },
+    {
+      "name": "TELLER",
+      "_responsibilities": [
+        "knows how to check out the items in shopping cart",
+        "knows the special offers available on products"
+      ],
+      "_collaborators": [
+        "SHOPPING CART",
+        "OFFER"
+      ],
+      "_posX": 79,
+      "_posY": 130,
+      "_type": "entity",
+      "_uuid": "0461e2d7-3a21-fb4a-6758-3686c9c718bd"
+    },
+    {
+      "name": "OFFER",
+      "_responsibilities": [
+        "given quantity and unit price knows the discount"
+      ],
+      "_collaborators": [
+        "DISCOUNT"
+      ],
+      "_posX": 356,
+      "_posY": 449,
+      "_name": "OFFER",
+      "_uuid": "8d082ffe-6b61-7388-1dd1-1d34474861b0",
+      "_type": "entity"
+    },
+    {
+      "name": "DISCOUNT",
+      "_responsibilities": [
+        "knows the amount to discount from total price"
+      ],
+      "_collaborators": [],
+      "_posX": 633,
+      "_posY": 450,
+      "_name": "DISCOUNT",
+      "_uuid": "aba762da-43ea-62d2-80c5-8cc7d22e2921",
+      "_type": "entity"
+    }
+  ],
+  "_uuid": "a366ae81-716b-093f-fb2e-10a11a8db71f",
+  "_width": 1920,
+  "_height": 1080,
+  "_title": "Supermarket Receipt Refactoring Kata"
+}
