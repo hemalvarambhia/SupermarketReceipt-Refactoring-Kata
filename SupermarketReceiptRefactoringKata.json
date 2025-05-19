@@ -100,9 +100,46 @@
       "_name": "DISCOUNT",
       "_uuid": "aba762da-43ea-62d2-80c5-8cc7d22e2921",
       "_type": "entity"
+    },
+    {
+      "name": "PRODUCT BUNDLE",
+      "_responsibilities": [
+        "knows the products that are a bundle"
+      ],
+      "_collaborators": [
+        "PRODUCT"
+      ],
+      "_posX": 77,
+      "_posY": 444,
+      "_type": "entity",
+      "_uuid": "bd2722e2-9950-f9d8-b1c4-8aa9911f69a9"
+    },
+    {
+      "name": "PRODUCT",
+      "_responsibilities": [
+        "knows its name",
+        "knows its product unit (per kilo, each)"
+      ],
+      "_collaborators": [
+        "PRODUCT UNIT"
+      ],
+      "_posX": 322,
+      "_posY": 282,
+      "_name": "PRODUCT",
+      "_uuid": "d7949754-2997-57b3-dfdb-dff50bd174f6",
+      "_type": "entity"
+    },
+    {
+      "name": "PRODUCT UNIT",
+      "_responsibilities": [],
+      "_collaborators": [],
+      "_posX": 340,
+      "_posY": 20,
+      "_name": "PRODUCT UNIT",
+      "_uuid": "5b973e39-93e0-ee0e-c411-0affcfd8e2a3"
     }
   ],
-  "_uuid": "a366ae81-716b-093f-fb2e-10a11a8db71f",
+  "_uuid": "d1e499e5-366b-596a-ebce-56b29d36f432",
   "_width": 1920,
   "_height": 1080,
   "_title": "Supermarket Receipt Refactoring Kata"
