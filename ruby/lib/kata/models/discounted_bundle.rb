@@ -6,8 +6,7 @@ class DiscountedBundle
   end
 
   def qualifies?(products_purchased)
-    products_in_bundle =
-      products_purchased.find_all { |item| @product_bundle.include?(item) }
+    products_in_bundle = products_purchased.find_all { |item| @product_bundle.include?(item) }
 
     products_in_bundle.uniq == @product_bundle
   end
