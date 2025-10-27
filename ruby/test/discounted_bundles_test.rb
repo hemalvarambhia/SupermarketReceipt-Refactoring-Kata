@@ -88,6 +88,19 @@ class DiscountedBundlesTest < Minitest::Test
   end
 
   def test_distills_bundle_from_products_purchased
-    skip 'TODO - if bundle is 1, 2 and products purchased is 1, 3, 4 and 2, 1 and 2 are returned.'
+    bundle_of_products = [
+      Kata::Product.new(name: 'orange juice', unit: Kata::ProductUnit::EACH),
+      Kata::Product.new(name: 'blueberries', unit: Kata::ProductUnit::KILO)
+    ]
+    discounted_bundle_offer = DiscountedBundle.new(bundle: bundle_of_products)
+
+    products_purchased = [
+      Kata::Product.new(name: 'orange juice', unit: Kata::ProductUnit::EACH),
+      Kata::Product.new(name: 'carrot', unit: Kata::ProductUnit::KILO),
+      Kata::Product.new(name: 'milk', unit: Kata::ProductUnit::EACH),
+      Kata::Product.new(name: 'blueberries', unit: Kata::ProductUnit::KILO)
+    ]
+    qualifies_for_discount = discounted_bundle_offer.qualifies?(products_purchased)
+    assert(true, qualifies_for_discount)
   end
 end
