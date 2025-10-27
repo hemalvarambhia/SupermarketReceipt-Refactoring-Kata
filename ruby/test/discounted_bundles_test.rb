@@ -51,8 +51,8 @@ class DiscountedBundlesTest < Minitest::Test
 
   def test_qualifies_for_discounted_bundle_when_complete_bundle_purchased_plus_incomplete_bundle
     bundle_of_products = [
-      Kata::Product.new(name: 'orange juice', unit: Kata::ProductUnit::EACH),
-      Kata::Product.new(name: 'orange', unit: Kata::ProductUnit::KILO)
+      Kata::Product.each(name: 'orange juice'),
+      Kata::Product.kilo_of(name: 'orange')
     ]
     discounted_bundle_offer = DiscountedBundle.new(bundle: bundle_of_products)
 
