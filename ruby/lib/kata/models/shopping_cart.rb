@@ -17,8 +17,6 @@ module Kata
       nil
     end
 
-    attr_reader :product_quantities
-
     def add_item_quantity(product, quantity)
       @items << Kata::ProductQuantity.new(product, quantity)
       @product_quantities[product] = if @product_quantities.key?(product)
