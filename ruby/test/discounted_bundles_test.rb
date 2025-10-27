@@ -3,10 +3,10 @@ require_relative './test_helper'
 # Tests that document how a discounted bundle works.
 class DiscountedBundlesTest < Minitest::Test
   def test_qualifies_for_discount_when_complete_bundle_purchased
-    bundle_of_products = [ Kata::Product.new(name: 'banana', unit: Kata::ProductUnit::KILO) ]
+    bundle_of_products = [ Kata::Product.kilo_of(name: 'banana') ]
     discounted_bundle_offer = DiscountedBundle.new(bundle: bundle_of_products)
 
-    products_purchased = [ Kata::Product.new(name: 'banana', unit: Kata::ProductUnit::KILO) ]
+    products_purchased = [ Kata::Product.kilo_of(name: 'banana') ]
     qualifies_for_discount = discounted_bundle_offer.complete_bundle?(products_purchased)
 
     assert_equal(true, qualifies_for_discount)
