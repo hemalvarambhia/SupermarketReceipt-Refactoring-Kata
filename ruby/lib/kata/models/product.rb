@@ -1,3 +1,3 @@
-Kata::Product = Struct.new(:name, :unit) do
+Kata::Product = Data.define(:name, :unit) do
 
 end
