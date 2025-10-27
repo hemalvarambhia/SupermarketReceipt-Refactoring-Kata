@@ -32,7 +32,7 @@ class DiscountedBundlesTest < Minitest::Test
     assert_equal(false, qualifies_for_discount)
   end
 
-  def test_does_not_qualify_for_discounted_bundle_when_bundle_not_purchased
+  def test_does_not_qualify_for_discounted_bundle_when_any_incomplete_bundle_purchased
     bundle_of_products = [
       Kata::Product.kilo_of(name: 'blueberries'),
       Kata::Product.kilo_of(name: 'raspberries'),
