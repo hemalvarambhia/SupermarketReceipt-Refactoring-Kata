@@ -7,7 +7,7 @@ class DiscountedBundlesTest < Minitest::Test
     discounted_bundle_offer = DiscountedBundle.new(bundle: bundle_of_products)
 
     products_purchased = [ Kata::Product.new(name: 'banana', unit: Kata::ProductUnit::KILO) ]
-    qualifies_for_discount = discounted_bundle_offer.qualifies?(products_purchased)
+    qualifies_for_discount = discounted_bundle_offer.complete_bundle?(products_purchased)
 
     assert_equal(true, qualifies_for_discount)
   end
@@ -17,7 +17,7 @@ class DiscountedBundlesTest < Minitest::Test
     discounted_bundle_offer = DiscountedBundle.new(bundle: bundle_of_products)
 
     products_purchased = [ Kata::Product.new(name: 'blueberries', unit: Kata::ProductUnit::KILO) ]
-    qualifies_for_discount = discounted_bundle_offer.qualifies?(products_purchased)
+    qualifies_for_discount = discounted_bundle_offer.complete_bundle?(products_purchased)
 
     assert_equal(true, qualifies_for_discount)
   end
