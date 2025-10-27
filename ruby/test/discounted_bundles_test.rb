@@ -34,13 +34,13 @@ class DiscountedBundlesTest < Minitest::Test
 
   def test_does_not_qualify_for_discounted_bundle_when_bundle_not_purchased
     bundle_of_products = [
-      Kata::Product.new(name: 'blueberries', unit: Kata::ProductUnit::KILO),
-      Kata::Product.new(name: 'raspberries', unit: Kata::ProductUnit::KILO),
+      Kata::Product.kilo_of(name: 'blueberries'),
+      Kata::Product.kilo_of(name: 'raspberries'),
     ]
     discounted_bundle_offer = DiscountedBundle.new(bundle: bundle_of_products)
 
     products_purchased = [
-      Kata::Product.new(name: 'blueberries', unit: Kata::ProductUnit::KILO), # part of bundle
+      Kata::Product.kilo_of(name: 'blueberries'), # part of bundle
       Kata::Product.new(name: 'yoghurt', unit: Kata::ProductUnit::EACH),
       Kata::Product.new(name: 'banana', unit: Kata::ProductUnit::KILO),
     ]
