@@ -72,8 +72,8 @@ class SupermarketTest < Minitest::Test
   end
 
   def test_x_for_y_discount
-    @the_cart.add_item(@cherry_tomatoes)
-    @the_cart.add_item(@cherry_tomatoes)
+    @the_cart.add_item_quantity(@cherry_tomatoes, 1)
+    @the_cart.add_item_quantity(@cherry_tomatoes, 1)
     @teller.add_special_offer(Kata::SpecialOfferType::TWO_FOR_AMOUNT, @cherry_tomatoes, 0.99)
     receipt = @teller.checks_out_articles_from(@the_cart)
     verify Kata::ReceiptPrinter.new(40).print_receipt(receipt)
