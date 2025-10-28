@@ -12,8 +12,8 @@ module Kata
       @items.each(&block)
     end
 
-    def add_item(product)
-      add_item_quantity(product, 1.0)
+    def add_item(product, quantity = 1.0)
+      add_item_quantity(product, quantity)
       nil
     end
 
