@@ -1,10 +1,1 @@
-class Kata::ProductQuantity
-  attr_reader :product, :quantity
-
-  def initialize(product, quantity)
-    @product = product
-    @quantity = quantity
-  end
-end
-
 Kata::ProductQuantity = Data.define(:product, :quantity)
