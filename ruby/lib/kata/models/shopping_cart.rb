@@ -12,10 +12,6 @@ module Kata
       @items.each(&block)
     end
 
-    def add_item(product, quantity = 1.0)
-      add_item_quantity(product, quantity)
-    end
-
     def add_item_quantity(product, quantity)
       @items << Kata::ProductQuantity.new(product, quantity)
       @product_quantities[product] = if @product_quantities.key?(product)
