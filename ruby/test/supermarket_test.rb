@@ -65,7 +65,7 @@ class SupermarketTest < Minitest::Test
   end
 
   def test_percent_discount
-    @the_cart.add_item(@rice)
+    @the_cart.add_item_quantity(@rice, 1.0)
     @teller.add_special_offer(Kata::SpecialOfferType::TEN_PERCENT_DISCOUNT, @rice, 10.0)
     receipt = @teller.checks_out_articles_from(@the_cart)
     verify Kata::ReceiptPrinter.new(40).print_receipt(receipt)
