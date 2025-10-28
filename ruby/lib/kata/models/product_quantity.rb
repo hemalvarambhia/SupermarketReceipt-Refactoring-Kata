@@ -6,3 +6,5 @@ class Kata::ProductQuantity
     @quantity = quantity
   end
 end
+
+Kata::ProductQuantity = Data.define(:product, :quantity)
