@@ -14,7 +14,6 @@ module Kata
 
     def add_item(product, quantity = 1.0)
       add_item_quantity(product, quantity)
-      nil
     end
 
     def add_item_quantity(product, quantity)
