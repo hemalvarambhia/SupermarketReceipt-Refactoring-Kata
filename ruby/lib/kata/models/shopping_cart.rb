@@ -16,9 +16,9 @@ module Kata
       @items << Kata::ProductQuantity.new(product, quantity)
       @product_quantities[product] = if @product_quantities.key?(product)
                                        @product_quantities[product] + quantity
-                                    else
-                                      quantity
-                                    end
+                                     else
+                                       quantity
+                                     end
     end
 
     def handle_offers(receipt, offers, catalog)
