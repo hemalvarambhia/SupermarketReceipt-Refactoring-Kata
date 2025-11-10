@@ -6,8 +6,8 @@ class ReceiptPrinterTest < Minitest::Test
   cover 'Kata*'
 
   def setup
-    @toothbrush = Kata::Product.new('toothbrush', Kata::ProductUnit::EACH)
-    @apples = Kata::Product.new('apples', Kata::ProductUnit::KILO)
+    @toothbrush = Kata::Product.each(name: 'toothbrush')
+    @apples = Kata::Product.kilo_of(name: 'apples')
     @receipt = Kata::Receipt.new
   end
 
