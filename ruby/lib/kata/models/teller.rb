@@ -12,11 +12,10 @@ module Kata
     end
 
     def checks_out_articles_from(the_cart)
-      receipt = Kata::Receipt.new
-      the_cart.each_item { |product_quantity| add(product_quantity, receipt) }
-      the_cart.handle_offers(receipt, @offers, @catalog)
-
-      receipt
+      Kata::Receipt.new.tap do |receipt|
+        the_cart.each_item { |product_quantity| add(product_quantity, receipt) }
+        the_cart.handle_offers(receipt, @offers, @catalog)
+      end
     end
 
     private
