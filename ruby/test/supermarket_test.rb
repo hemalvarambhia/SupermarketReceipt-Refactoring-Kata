@@ -10,13 +10,13 @@ class SupermarketTest < Minitest::Test
     @teller = Kata::Teller.new(@catalog)
     @the_cart = Kata::ShoppingCart.new
 
-    @toothbrush = Kata::Product.new('toothbrush', Kata::ProductUnit::EACH)
+    @toothbrush = Kata::Product.each(name: 'toothbrush')
     @catalog.add_product(@toothbrush, 0.99)
-    @rice = Kata::Product.new('rice', Kata::ProductUnit::EACH)
+    @rice = Kata::Product.each(name: 'rice')
     @catalog.add_product(@rice, 2.99)
-    @apples = Kata::Product.new('apples', Kata::ProductUnit::KILO)
+    @apples = Kata::Product.kilo_of(name: 'apples')
     @catalog.add_product(@apples, 1.99)
-    @cherry_tomatoes = Kata::Product.new('cherry tomato box', Kata::ProductUnit::EACH)
+    @cherry_tomatoes = Kata::Product.each(name: 'cherry tomato box')
     @catalog.add_product(@cherry_tomatoes, 0.69)
   end
 
