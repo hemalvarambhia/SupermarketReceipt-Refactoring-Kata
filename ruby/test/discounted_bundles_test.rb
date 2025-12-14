@@ -89,8 +89,8 @@ class DiscountedBundlesTest < Minitest::Test
 
   def test_distills_bundle_from_products_purchased
     bundle_of_products = [
-      Kata::Product.new(name: 'orange juice', unit: Kata::ProductUnit::EACH),
-      Kata::Product.new(name: 'blueberries', unit: Kata::ProductUnit::KILO)
+      Kata::Product.each(name: 'orange juice'),
+      Kata::Product.kilo_of(name: 'blueberries')
     ]
     discounted_bundle_offer = DiscountedBundle.new(bundle: bundle_of_products)
 
