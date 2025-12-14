@@ -15,19 +15,5 @@ module Kata
       result << @receipt_view.total_line_in_receipt(receipt)
       result
     end
-
-    private
-
-    def total_line_in_receipt(receipt)
-      @receipt_view.total_line_in_receipt(receipt)
-    end
-
-    def discount_line_in_receipt(discount)
-      @receipt_view.discount_line_in_receipt(discount)
-    end
-
-    def line_item_in_receipt(item)
-      @receipt_view.line_item_in_receipt(item)
-    end
   end
 end
