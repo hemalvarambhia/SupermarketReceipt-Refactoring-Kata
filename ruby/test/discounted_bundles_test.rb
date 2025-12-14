@@ -7,7 +7,7 @@ class DiscountedBundlesTest < Minitest::Test
     discounted_bundle_offer = DiscountedBundle.new(bundle: bundle_of_products)
 
     products_purchased = [ Kata::Product.kilo_of(name: 'banana') ]
-    qualifies_for_discount = discounted_bundle_offer.complete_bundle?(products_purchased)
+    qualifies_for_discount = discounted_bundle_offer.qualifies?(products_purchased)
 
     assert_equal(true, qualifies_for_discount)
   end
@@ -17,7 +17,7 @@ class DiscountedBundlesTest < Minitest::Test
     discounted_bundle_offer = DiscountedBundle.new(bundle: bundle_of_products)
 
     products_purchased = [ Kata::Product.kilo_of(name: 'blueberries') ]
-    qualifies_for_discount = discounted_bundle_offer.complete_bundle?(products_purchased)
+    qualifies_for_discount = discounted_bundle_offer.qualifies?(products_purchased)
 
     assert_equal(true, qualifies_for_discount)
   end
@@ -27,7 +27,7 @@ class DiscountedBundlesTest < Minitest::Test
     discounted_bundle_offer = DiscountedBundle.new(bundle: bundle_of_products)
 
     products_purchased = [ Kata::Product.kilo_of(name: 'blueberries') ]
-    qualifies_for_discount = discounted_bundle_offer.complete_bundle?(products_purchased)
+    qualifies_for_discount = discounted_bundle_offer.qualifies?(products_purchased)
 
     assert_equal(false, qualifies_for_discount)
   end
@@ -44,7 +44,7 @@ class DiscountedBundlesTest < Minitest::Test
       Kata::Product.each(name: 'yoghurt'),
       Kata::Product.kilo_of(name: 'banana'),
     ]
-    qualifies_for_discount = discounted_bundle_offer.complete_bundle?(products_purchased)
+    qualifies_for_discount = discounted_bundle_offer.qualifies?(products_purchased)
 
     assert_equal(false, qualifies_for_discount)
   end
@@ -63,7 +63,7 @@ class DiscountedBundlesTest < Minitest::Test
       Kata::Product.each(name: 'milk'),
       Kata::Product.kilo_of(name: 'blueberries')
     ]
-    qualifies_for_discount = discounted_bundle_offer.complete_bundle?(products_purchased)
+    qualifies_for_discount = discounted_bundle_offer.qualifies?(products_purchased)
 
     assert_equal(true, qualifies_for_discount)
   end
