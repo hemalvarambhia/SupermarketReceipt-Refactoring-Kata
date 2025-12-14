@@ -10,5 +10,4 @@ class DiscountedBundle
 
     products_in_bundle.uniq == @product_bundle
   end
-  alias_method :complete_bundle?, :qualifies?
 end
