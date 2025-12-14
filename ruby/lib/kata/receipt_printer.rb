@@ -2,8 +2,8 @@
 
 module Kata
   class ReceiptPrinter
-    def initialize(columns = 40)
-      @receipt_view = TextBasedReceiptView.new(columns)
+    def initialize(columns = 40, receipt_view = TextBasedReceiptView.new(columns))
+      @receipt_view = receipt_view
     end
 
     def print_receipt(receipt)
